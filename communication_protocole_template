@@ -1,0 +1,23 @@
+Fetch multimedia/group info:
+    Request:
+        FetchMultimedia name
+        FetchGroup name
+    Response (each line separated with a ';'):
+        MultimediaInfo info
+        GroupInfo info
+        
+Play a multimedia:
+    Request:
+        PlayMultimedia name
+    Response:
+        PlayMultimediaSuccess
+
+Errors handeling:
+    GroupNotFound
+    MultimediaNotFound
+    WrongRequest
+
+
+FetchMultimedia Ma video 3
+FetchGroup Ma liste
+
