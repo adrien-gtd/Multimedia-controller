@@ -28,7 +28,7 @@ public:
     std::string getGroupName() { return group_name_; }
     void serialize(std::ostream &stream);
 
-    void deleteMultimedia(std::string name);
+    void removeMultimedia(std::string name);
 };
 
 #endif

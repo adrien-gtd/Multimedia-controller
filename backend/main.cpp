@@ -4,21 +4,24 @@
 //
 #define version_3
 
-#include "Controller.h"
+
 #include <iostream>
 #include <memory>
 #include <string>
 #include <iostream>
 #include <sstream>
-#include "tcpserver.h"
 #include <fstream> 
+
+
+#include "RequestHandler.h"
+#include "tcpserver.h"
+#include "Controller.h"
 
 const int PORT = 3331;
 
-// TODO : 
-// - 
 
-std::string handleRequest(std::string header, std::string body, Controller my_controller);
+std::string handleRequest(std::string header, std::string body, Controller& my_controller);
+std::pair<std::string, std::string> getMultimediaAndGroupName(const std::string& body);
 
 int main(int argc, const char *argv[])
 {
@@ -130,7 +133,7 @@ int main(int argc, const char *argv[])
     std::string body = oss.str();
 
     // handle the request in another function, see #handleRequest
-    response = handleRequest(header, body, *my_controller);
+    response = RequestHandler::handleRequest(header, body,* my_controller);
 
     // return false would close the connecytion with the client
     return true; });
@@ -151,56 +154,3 @@ int main(int argc, const char *argv[])
   return 0;
 }
 
-std::string handleRequest(std::string header, std::string body, Controller my_controller)
-{ 
-  std::cout << "Handeling request - header: " << header << "; body: " << body << std::endl ;
-  if (header == "FetchMultimedia")
-  {
-    std::ostringstream oss;
-    my_controller.printMultimedia(body,oss, ';');
-    std::string response_body = oss.str();
-    if (response_body == "MultimediaNotFound") {
-      return "MultimediaNotFound";
-    }
-    return "MultimediaInfo" + response_body;
-  }
-  if (header == "FetchGroup")
-  {
-    std::ostringstream oss;
-    my_controller.printGroup(body,oss, ';');
-    std::string response_body = oss.str();
-    if (response_body == "GroupNotFound") {
-      return "GroupNotFound";
-    }
-    return "GroupInfo" + response_body;
-  }
-  if (header == "PlayMultimedia")
-  {
-    int status = my_controller.playMultimedia(body);
-    if (status == 0) return "PlayMultimediaSuccess";
-    else return "MultimediaNotFound";
-  }
-  if (header == "FetchMultimediaList"){
-    std::ostringstream oss;
-    my_controller.printAllMultimedia(oss, ';');
-    return "MultimediaList" + oss.str();
-  }
-  if (header == "FetchGroupList"){
-    std::ostringstream oss;
-    my_controller.printAllGroup(oss, ';');
-    return "GroupList" + oss.str();
-  }
-  if (header == "RemoveMultimedia") {
-    status = my_controller.deleteMultimedia(body);
-    if (status == 0) return "RemoveMultimediaSuccess";
-    else return "MultimediaNotFound";
-  }
-  if (header == "RemoveGroup") {
-    status = my_controller.deleteGroup(body);
-    if (status == 0) return "RemoveGroupSuccess";
-    else return "GroupNotFound";
-  }
-  if 
-
-  return "WrongRequest";
-}

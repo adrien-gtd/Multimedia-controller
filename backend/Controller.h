@@ -36,7 +36,8 @@ public:
     void printMultimedia(std::string name, std::ostream& stream, char line_separator = '\n') const;
     
     GroupPtr createGroup(std::string name);
-    GroupPtr addMultimediaToGroup(std::string group_name, std::string multimedia_name);
+    int addMultimediaToGroup(std::string group_name, std::string multimedia_name);
+    int removeMultimediaFromGroup(std::string group_name, std::string multimedia_name);
     GroupPtr getGroup(std::string name) const;
     void printGroup(std::string name, std::ostream& stream, char line_separator) const;
 
@@ -49,8 +50,8 @@ public:
     void serialize(std::ostream& stream) const;
     void deserialize(std::istream & stream);
 
-    void deleteMultimedia(std::string name);
-    void deleteGroup(std::string name);
+    int deleteMultimedia(std::string name);
+    int deleteGroup(std::string name);
 };
 
 #endif

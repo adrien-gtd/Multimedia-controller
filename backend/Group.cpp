@@ -43,7 +43,7 @@ void Group::serialize(std::ostream &stream)
     }
 }
 
-void Group::deleteMultimedia(std::string name)
+void Group::removeMultimedia(std::string name)
 {
     auto it = this->begin();
     while (it != this->end())

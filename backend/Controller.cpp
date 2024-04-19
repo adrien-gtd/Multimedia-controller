@@ -37,9 +37,7 @@ MultimediaPtr Controller::getMultimedia(std::string name) const
 {
     auto searched_multimedia = multimedia_map_.find(name);
     if (searched_multimedia == multimedia_map_.end())
-    {
-        throw std::runtime_error("Error, cannot find the multimedia.");
-    }
+        return nullptr;
     else
         return searched_multimedia->second;
 }
@@ -174,17 +172,23 @@ void Controller::deserializeMultimedia(std::istream &stream)
     }
 }
 
-GroupPtr Controller::addMultimediaToGroup(std::string group_name, std::string multimedia_name)
+// 1: Group not found
+// 2: Multimedia not found
+// 3: Multimedia already in the group
+// 0: Success
+int Controller::addMultimediaToGroup(std::string group_name, std::string multimedia_name)
 {
     auto fetch_group = group_map_.find(group_name);
-    if (fetch_group != group_map_.end())
-        throw std::runtime_error("Cannot add the multimedia to the group, the group provided is not existing.");
+    if (fetch_group == group_map_.end())
+        return 1;
     GroupPtr group = fetch_group->second;
-    if (std::find(group->begin(), group->end(), this->getMultimedia(multimedia_name)) == group->end())
+    auto multimedia = this->getMultimedia(multimedia_name);
+    if (multimedia == nullptr)
+        return 2;
+    if (std::find(group->begin(), group->end(), multimedia) == group->end())
         group->push_front(getMultimedia(multimedia_name));
-    else
-        throw std::runtime_error("Cannot add the multimedia to the group, the group provided is already in the group.");
-    return nullptr;
+        return 0;
+    return 3;
 }
 
 void Controller::serialize(std::ostream &stream) const
@@ -248,4 +252,27 @@ int Controller::deleteGroup(std::string name)
         group_map_.erase(searched_group);
         return 0;
     }
+}
+
+
+// 1: Group not found
+// 2: Multimedia not found
+// 3: Multimedia not in the group
+// 0: Success
+int Controller::removeMultimediaFromGroup(std::string group_name, std::string multimedia_name)
+{
+    auto fetch_group = group_map_.find(group_name);
+    if (fetch_group == group_map_.end())
+        return 1;
+    GroupPtr group = fetch_group->second;
+    auto multimedia = this->getMultimedia(multimedia_name);
+    if (multimedia == nullptr)
+        return 2;
+    auto it = std::find(group->begin(), group->end(), multimedia);
+    if (it != group->end())
+    {
+        group->erase(it);
+        return 0;
+    }
+    return 3;
 }

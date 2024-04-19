@@ -14,7 +14,7 @@ PROG = executable
 #
 # Fichiers sources (NE PAS METTRE les .h ni les .o seulement les .cpp)
 #
-SOURCES = Multimedia.cpp tcpserver.cpp ccsocket.cpp Controller.cpp Group.cpp Film.cpp Video.cpp Image.cpp main.cpp
+SOURCES = RequestHandler.cpp Multimedia.cpp tcpserver.cpp ccsocket.cpp Controller.cpp Group.cpp Film.cpp Video.cpp Image.cpp main.cpp
 
 #
 # Fichiers objets (ne pas modifier sauf si l'extension n'est pas .cpp)

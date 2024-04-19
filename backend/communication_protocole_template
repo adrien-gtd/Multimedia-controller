@@ -74,7 +74,7 @@ Remove a group: ## done
     Error:
         GroupNotFound
 
-Add a group:
+Add a group: ## done
     Request:
         AddGroup 'name'
     Response:
@@ -82,23 +82,27 @@ Add a group:
     Error:
         WrongFormat
 
-Add a multimedia to a group:
+Add a multimedia to a group:    ## done
     Request:
-        AddMultimediaToGroup 'multimediaName' 'groupName'
+        AddMultimediaToGroup '[multimediaName]' '[groupName]'
     Response:
         AddMultimediaToGroupSuccess
     Error:
         MultimediaNotFound
         GroupNotFound
+        MultimediaAlreadyInGroup
+        WrongFormat
 
-Remove a multimedia from a group:
+Remove a multimedia from a group:     ## done
     Request:
-        RemoveMultimediaFromGroup 'multimediaName' 'groupName'
+        RemoveMultimediaFromGroup '[multimediaName]' '[groupName]'
     Response:
         RemoveMultimediaFromGroupSuccess
     Error:
         MultimediaNotFound
         GroupNotFound
+        MultimediaNotInGroup
+        WrongFormat
 
 Save controller state:
     Request:
