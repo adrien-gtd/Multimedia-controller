@@ -2,7 +2,7 @@
 // main.cpp
 // Created on 21/10/2018
 //
-#define version_2
+#define version_3
 
 #include "Controller.h"
 #include <iostream>
@@ -14,6 +14,9 @@
 #include <fstream> 
 
 const int PORT = 3331;
+
+// TODO : 
+// - 
 
 std::string handleRequest(std::string header, std::string body, Controller my_controller);
 
@@ -97,6 +100,15 @@ int main(int argc, const char *argv[])
 
   #ifdef version_3
 
+  Controller *my_controller = new Controller();
+  auto group1 = my_controller->createGroup("Ma liste");
+  group1->push_front(my_controller->createImage(14, 10, "Mon image 1", "asset/image1.jpeg"));
+  group1->push_front(my_controller->createImage(14, 10, "Mon image 2", "asset/image2.jpeg"));
+  group1->push_front(my_controller->createVideo(25, "Ma video 2", "asset/video2.mp4"));
+  group1->push_front(my_controller->createImage(14, 10, "Mon image 3", "asset/image3.jpeg"));
+  group1->push_front(my_controller->createVideo(52, "Ma video 3", "asset/video3.mp4"));
+  group1->push_front(my_controller->createFilm(25, "Mon Film 1", "asset/video2.mp4", new int[5]{6, 3, 5, 7, 3}, 5));
+
   // cree le TCPServer
   auto *server =
       new TCPServer([&](std::string const &request, std::string &response)
@@ -128,7 +140,7 @@ int main(int argc, const char *argv[])
 
   int status = server->run(PORT);
 
-  // en cas d'erreur
+  // en cas d'erreur
   if (status < 0)
   {
     std::cerr << "Could not start Server on port " << PORT << std::endl;
@@ -168,5 +180,27 @@ std::string handleRequest(std::string header, std::string body, Controller my_co
     if (status == 0) return "PlayMultimediaSuccess";
     else return "MultimediaNotFound";
   }
+  if (header == "FetchMultimediaList"){
+    std::ostringstream oss;
+    my_controller.printAllMultimedia(oss, ';');
+    return "MultimediaList" + oss.str();
+  }
+  if (header == "FetchGroupList"){
+    std::ostringstream oss;
+    my_controller.printAllGroup(oss, ';');
+    return "GroupList" + oss.str();
+  }
+  if (header == "RemoveMultimedia") {
+    status = my_controller.deleteMultimedia(body);
+    if (status == 0) return "RemoveMultimediaSuccess";
+    else return "MultimediaNotFound";
+  }
+  if (header == "RemoveGroup") {
+    status = my_controller.deleteGroup(body);
+    if (status == 0) return "RemoveGroupSuccess";
+    else return "GroupNotFound";
+  }
+  if 
+
   return "WrongRequest";
 }

@@ -22,11 +22,13 @@ public:
     Group(std::string name) : group_name_{name} {}
     Group(std::istream &stream, Controller *controller);
 
-    void print(std::ostream &stream) const;
+
     void print(std::ostream &stream, char line_separator) const;
     void setName(std::string new_group_name) { group_name_ = new_group_name; }
     std::string getGroupName() { return group_name_; }
     void serialize(std::ostream &stream);
+
+    void deleteMultimedia(std::string name);
 };
 
 #endif

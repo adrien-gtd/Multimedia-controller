@@ -58,7 +58,7 @@ int Controller::playMultimedia(std::string name) const
     }
 }
 
-void Controller::printMultimedia(std::string name, std::ostream &stream, char line_separator = '\n') const
+void Controller::printMultimedia(std::string name, std::ostream &stream, char line_separator) const
 {
     if (!stream)
         throw std::runtime_error("Error, cannot use the input stream.");
@@ -94,7 +94,7 @@ GroupPtr Controller::getGroup(std::string name) const
         return searched_group->second;
 }
 
-void Controller::printGroup(std::string name, std::ostream &stream, char line_separator) const
+void Controller::printGroup(std::string name, std::ostream &stream, char line_separator = '\n') const
 {
     if (!stream)
         throw std::runtime_error("Error, cannot use the input stream.");
@@ -108,33 +108,26 @@ void Controller::printGroup(std::string name, std::ostream &stream, char line_se
         searched_group->second->print(stream, line_separator);
 }
 
-void Controller::printGroup(std::string name, std::ostream &stream) const
-{
-    printGroup(name, stream, '\n');
-}
-
-void Controller::printAllMultimedia(std::ostream &stream) const
+void Controller::printAllMultimedia(std::ostream &stream, char line_separator) const
 {
     if (!stream)
         throw std::runtime_error("Error, cannot use the input stream.");
     stream << "The multimedia in the controller are: ";
     for (const auto &pair : multimedia_map_)
     {
-        stream << "\n\t" << pair.first;
+        stream << line_separator <<"\t" << pair.first;
     }
-    stream << std::endl;
 }
 
-void Controller::printAllGroup(std::ostream &stream) const
+void Controller::printAllGroup(std::ostream &stream, char line_separator) const
 {
     if (!stream)
         throw std::runtime_error("Error, cannot use the input stream.");
     stream << "The group in the controller are: ";
     for (const auto &pair : group_map_)
     {
-        stream << "\n\t" << pair.first;
+        stream << line_separator << "\t" << pair.first;
     }
-    stream << std::endl;
 }
 
 void Controller::serializeMultimedia(std::ostream &stream) const
@@ -224,5 +217,35 @@ void Controller::deserialize(std::istream &stream)
     catch (const std::exception &e)
     {
         throw std::runtime_error("Cannot deserialize the multimedia map, the input provided is in the wrong format.");
+    }
+}
+
+int Controller::deleteMultimedia(std::string name)
+{
+    auto searched_multimedia = multimedia_map_.find(name);
+    if (searched_multimedia == multimedia_map_.end())
+    {
+        return 1;
+    }
+    else
+    {
+        multimedia_map_.erase(searched_multimedia);
+        for (auto &pair : group_map_)
+            pair.second->removeMultimedia(name);
+        return 0;
+    }
+}
+
+int Controller::deleteGroup(std::string name)
+{
+    auto searched_group = group_map_.find(name);
+    if (searched_group == group_map_.end())
+    {
+        return 1;
+    }
+    else
+    {
+        group_map_.erase(searched_group);
+        return 0;
     }
 }

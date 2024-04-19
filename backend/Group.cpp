@@ -42,3 +42,19 @@ void Group::serialize(std::ostream &stream)
         stream << element->getName() << "\n";
     }
 }
+
+void Group::deleteMultimedia(std::string name)
+{
+    auto it = this->begin();
+    while (it != this->end())
+    {
+        if ((*it)->getName() == name)
+        {
+            it = this->erase(it);
+        }
+        else
+        {
+            ++it;
+        }
+    }
+}

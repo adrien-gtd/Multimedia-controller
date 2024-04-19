@@ -1,0 +1,122 @@
+Fetch multimedia info: ## done
+    Request:
+        FetchMultimedia 'name'
+    Response (each line separated with a ';'):
+        MultimediaInfo 'info'
+    Error:
+        MultimediaNotFound
+
+Fetch group info:   ## done
+    Request:
+        FetchGroup 'name'
+    Response (each line separated with a ';'):
+        GroupInfo 'info'
+    Error:
+        GroupNotFound
+        
+Play a multimedia:  ## done
+    Request:
+        PlayMultimedia 'name'
+    Response:
+        PlayMultimediaSuccess
+    Error:
+        MultimediaNotFound
+
+Fetch multimedia list: ## done
+    Request:
+        FetchMultimediaList
+    Response:
+        MultimediaList 'list'
+
+Fetch group list: ## done
+    Request:
+        FetchGroupList
+    Response:
+        GroupList 'list'
+
+Remove a multimedia: ## done
+    Request:
+        RemoveMultimedia 'name'
+    Response:
+        RemoveMultimediaSuccess
+    Error:
+        MultimediaNotFound
+
+Add a film:
+    Request:
+        AddFilm 'name' 'path' 'duration:int' 'chaptersDuration:int[]' 'nbChapters:int'
+    Response:
+        AddMultimediaSuccess
+    Error:
+        WrongFormat
+
+Add a video:
+    Request:
+        AddVideo 'name' 'path' 'duration:int'
+    Response:
+        AddMultimediaSuccess
+    Error:
+        WrongFormat
+
+Add an imgae:
+    Request:
+        AddImage 'name' 'path' 'width:flaot' 'height:float'
+    Response:
+        AddMultimediaSuccess
+    Error:
+        WrongFormat 
+
+Remove a group: ## done
+    Request:
+        RemoveGroup 'name'
+    Response:
+        RemoveGroupSuccess
+    Error:
+        GroupNotFound
+
+Add a group:
+    Request:
+        AddGroup 'name'
+    Response:
+        AddGroupSuccess
+    Error:
+        WrongFormat
+
+Add a multimedia to a group:
+    Request:
+        AddMultimediaToGroup 'multimediaName' 'groupName'
+    Response:
+        AddMultimediaToGroupSuccess
+    Error:
+        MultimediaNotFound
+        GroupNotFound
+
+Remove a multimedia from a group:
+    Request:
+        RemoveMultimediaFromGroup 'multimediaName' 'groupName'
+    Response:
+        RemoveMultimediaFromGroupSuccess
+    Error:
+        MultimediaNotFound
+        GroupNotFound
+
+Save controller state:
+    Request:
+        SaveControllerState 'path'
+    Response:
+        SaveControllerStateSuccess
+    Error:
+        ErrorWhileSaving
+
+Load controller state:
+    Request:
+        LoadControllerState 'path'
+    Response:
+        LoadControllerStateSuccess
+    Error:
+        ErrorWhileLoading
+
+No matching request error message:
+    WrongRequest
+
+
