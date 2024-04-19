@@ -20,6 +20,9 @@ std::string RequestHandler::handleRequest(std::string header, std::string body, 
     if (header == "RemoveMultimediaFromGroup") return removeMultimediaFromGroup(body, my_controller);
     if (header == "SaveControllerState") return saveControllerState(body, my_controller);
     if (header == "LoadControllerState") return loadControllerState(body, my_controller);
+    if (header == "AddVideo") return addVideo(body, my_controller);
+    if (header == "AddImage") return addImage(body, my_controller);
+    if (header == "AddFilm") return addFilm(body, my_controller);
 
     return "WrongRequest";
     }
@@ -164,5 +167,63 @@ std::string RequestHandler::loadControllerState(std::string body, Controller& my
     {
         std::cerr << "Error: " << e.what() << std::endl;
         return "ErrorWhileLoading";
+    }
+}
+
+std::string RequestHandler::addVideo(std::string body, Controller& my_controller)
+{
+    std::istringstream iss(body);
+    std::string name, path, duration_str;
+    std::getline(iss, name, ']');
+    name = name.substr(1);
+    if (name.empty() || !(iss >> path >> duration_str)) return "WrongFormat";
+    try {
+        int duration = std::stoi(duration_str);
+        my_controller.createVideo(duration, name, path);
+        return "AddVideoSuccess";
+    } catch (const std::invalid_argument& e) {
+        return "InvalidDuration";
+    } catch (const std::out_of_range& e) {
+        return "DurationOutOfRange";
+    }
+}
+
+std::string RequestHandler::addImage(std::string body, Controller& my_controller)
+{
+    std::istringstream iss(body);
+    std::string name, path, height, width;
+    std::getline(iss, name, ']');
+    name = name.substr(1);
+    if (name.empty() || !(iss >> path >> width >> height)) return "WrongFormat";
+    try {
+        my_controller.createImage(std::stof(width), std::stof(height), name, path);
+        return "AddImageSuccess";
+    } catch (const std::invalid_argument& e) {
+        return "InvalidDimensions";
+    } catch (const std::out_of_range& e) {
+        return "DimensionsOutOfRange";
+    }
+}
+
+std::string RequestHandler::addFilm(std::string body, Controller& my_controller)
+{
+    std::istringstream iss(body);
+    std::string name, path, duration_str, nb_chapters_str;
+    std::getline(iss, name, ']');
+    name = name.substr(1);
+    if (name.empty() || !(iss >> path >> duration_str >> nb_chapters_str)) return "WrongFormat";
+    try {
+        int duration = std::stoi(duration_str);
+        int nb_chapters = std::stoi(nb_chapters_str);
+        int* chapters = new int[nb_chapters];
+        for (int i = 0; i < nb_chapters; i++) {
+            if (!(iss >> chapters[i])) return "WrongFormat";
+        }
+        my_controller.createFilm(duration, name, path, chapters, nb_chapters);
+        return "AddFilmSuccess";
+    } catch (const std::invalid_argument& e) {
+        return "InvalidDuration";
+    } catch (const std::out_of_range& e) {
+        return "DurationOutOfRange";
     }
 }

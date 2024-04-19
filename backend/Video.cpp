@@ -11,6 +11,7 @@ void Video::print(std::ostream &stream, char line_separator = '\n') const
             << line_separator
             << "The duration is: "
             << std::to_string(duration_)
+            << "minutes"
             << line_separator;
 }
 
