@@ -226,6 +226,8 @@ void Controller::deserialize(std::istream &stream)
     }
 }
 
+// 1: Multimedia not found
+// 0: Success
 int Controller::deleteMultimedia(std::string name)
 {
     auto searched_multimedia = multimedia_map_.find(name);
@@ -242,6 +244,9 @@ int Controller::deleteMultimedia(std::string name)
     }
 }
 
+
+// 1: Group not found
+// 0: Success
 int Controller::deleteGroup(std::string name)
 {
     auto searched_group = group_map_.find(name);

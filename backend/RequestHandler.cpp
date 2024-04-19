@@ -215,6 +215,7 @@ std::string RequestHandler::addFilm(std::string body, Controller& my_controller)
     try {
         int duration = std::stoi(duration_str);
         int nb_chapters = std::stoi(nb_chapters_str);
+        if (nb_chapters <= 0) return "InvalidNbChapters";
         int* chapters = new int[nb_chapters];
         for (int i = 0; i < nb_chapters; i++) {
             if (!(iss >> chapters[i])) return "WrongFormat";

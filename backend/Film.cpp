@@ -1,7 +1,8 @@
 #include "Film.h"
 
 int *duplicateIntArray(int *array, int array_size)
-{
+{   
+    if (array == nullptr || array_size <= 0) throw std::runtime_error("Error, could not create the Film.");
     int *return_array = new int[array_size];
     for (int index = 0; index < array_size; index++)
     {
