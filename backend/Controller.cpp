@@ -185,9 +185,11 @@ int Controller::addMultimediaToGroup(std::string group_name, std::string multime
     auto multimedia = this->getMultimedia(multimedia_name);
     if (multimedia == nullptr)
         return 2;
-    if (std::find(group->begin(), group->end(), multimedia) == group->end())
-        group->push_front(getMultimedia(multimedia_name));
-        return 0;
+    if (std::find(group->begin(), group->end(), multimedia) == group->end()) 
+        {
+            group->push_front(getMultimedia(multimedia_name));
+            return 0;
+        }
     return 3;
 }
 

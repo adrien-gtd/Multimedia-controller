@@ -1,6 +1,7 @@
 #include "RequestHandler.h"
 #include <iostream>
 #include <sstream>
+#include <fstream>
 
 std::string RequestHandler::handleRequest(std::string header, std::string body, Controller& my_controller)
 {
@@ -17,6 +18,8 @@ std::string RequestHandler::handleRequest(std::string header, std::string body, 
     if (header == "AddGroup") return addGroup(body, my_controller);
     if (header == "AddMultimediaToGroup") return addMultimediaToGroup(body, my_controller);
     if (header == "RemoveMultimediaFromGroup") return removeMultimediaFromGroup(body, my_controller);
+    if (header == "SaveControllerState") return saveControllerState(body, my_controller);
+    if (header == "LoadControllerState") return loadControllerState(body, my_controller);
 
     return "WrongRequest";
     }
@@ -132,3 +135,34 @@ std::string RequestHandler::removeMultimediaFromGroup(std::string body, Controll
     return "UnexpectedError";
 }
 
+std::string RequestHandler::saveControllerState(std::string body, Controller& my_controller)
+{   
+    try 
+    {
+    std::ofstream ofs(body);
+    if (!ofs.is_open()) return "CouldNotOpenFile";
+    my_controller.serialize(ofs);
+    return "SaveControllerStateSuccess";
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return "ErrorWhileSaving";
+    }
+}
+
+std::string RequestHandler::loadControllerState(std::string body, Controller& my_controller)
+{
+    try 
+    {
+    std::ifstream ifs(body);
+    if (!ifs.is_open()) return "FileNotFound";
+    my_controller.deserialize(ifs);
+    return "LoadControllerStateSuccess";
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return "ErrorWhileLoading";
+    }
+}

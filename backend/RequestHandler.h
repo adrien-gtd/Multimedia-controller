@@ -16,6 +16,8 @@ private:
     std::string static addGroup(std::string body, Controller& my_controller);
     std::string static addMultimediaToGroup(std::string body, Controller& my_controller);
     std::string static removeMultimediaFromGroup(std::string body, Controller& my_controller);
+    std::string static saveControllerState(std::string body, Controller& my_controller);
+    std::string static loadControllerState(std::string body, Controller& my_controller);
 public:
     std::string static handleRequest(std::string header, std::string body, Controller& my_controller);
 };

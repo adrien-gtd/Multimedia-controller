@@ -42,7 +42,7 @@ Remove a multimedia: ## done
     Error:
         MultimediaNotFound
 
-Add a film:
+Add a film:     ## TODO
     Request:
         AddFilm 'name' 'path' 'duration:int' 'chaptersDuration:int[]' 'nbChapters:int'
     Response:
@@ -50,7 +50,7 @@ Add a film:
     Error:
         WrongFormat
 
-Add a video:
+Add a video:        ## TODO
     Request:
         AddVideo 'name' 'path' 'duration:int'
     Response:
@@ -58,7 +58,7 @@ Add a video:
     Error:
         WrongFormat
 
-Add an imgae:
+Add an imgae:       ## TODO
     Request:
         AddImage 'name' 'path' 'width:flaot' 'height:float'
     Response:
@@ -104,23 +104,25 @@ Remove a multimedia from a group:     ## done
         MultimediaNotInGroup
         WrongFormat
 
-Save controller state:
+Save controller state: ## done
     Request:
         SaveControllerState 'path'
     Response:
         SaveControllerStateSuccess
     Error:
+        CouldNotOpenFile
         ErrorWhileSaving
 
-Load controller state:
+Load controller state: ## done  
     Request:
         LoadControllerState 'path'
     Response:
         LoadControllerStateSuccess
     Error:
+        FileNotFound
         ErrorWhileLoading
 
-No matching request error message:
+No matching request error message: ## done
     WrongRequest
 
 
