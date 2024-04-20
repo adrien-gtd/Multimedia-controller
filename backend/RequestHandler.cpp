@@ -58,7 +58,7 @@ std::string RequestHandler::fetchMultimedia(std::string body, Controller& my_con
     if (response_body == "MultimediaNotFound") {
       return "MultimediaNotFound";
     }
-    return "MultimediaInfo" + response_body;
+    return "MultimediaInfo " + response_body;
 }
 
 std::string RequestHandler::fetchGroup(std::string body, Controller& my_controller) 
@@ -69,7 +69,7 @@ std::string RequestHandler::fetchGroup(std::string body, Controller& my_controll
     if (response_body == "GroupNotFound") {
       return "GroupNotFound";
     }
-    return "GroupInfo" + response_body;
+    return "GroupInfo " + response_body;
 }
 
 std::string RequestHandler::playMultimedia(std::string body, Controller& my_controller)
@@ -83,14 +83,14 @@ std::string RequestHandler::fetchMultimediaList(Controller& my_controller)
 {
     std::ostringstream oss;
     my_controller.printAllMultimedia(oss, ';');
-    return "MultimediaList" + oss.str();
+    return "MultimediaList " + oss.str();
 }
 
 std::string RequestHandler::fetchGroupList(Controller& my_controller)
 {
     std::ostringstream oss;
     my_controller.printAllGroup(oss, ';');
-    return "GroupList" + oss.str();
+    return "GroupList " + oss.str();
 }
 
 std::string RequestHandler::removeMultimedia(std::string body, Controller& my_controller)

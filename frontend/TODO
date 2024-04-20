@@ -1,0 +1,138 @@
+Note: Inputs in brackets can contain spaces and inputs in quotes can contain spaces unless there is another input after it.
+Example of request, 'path' can not cotain spaces: AddVideo [Ma video] ./myPath 25     ## See AddVideo request for more details
+Exemple of request, 'name' can contain spaces: FetchMultimedia Ma video     ## See FetchMultimedia request for more details
+
+Fetch multimedia info: ## done
+    Request:
+        FetchMultimedia 'name'
+    Response (each line separated with a ';'):
+        MultimediaInfo 'info'
+    Error:
+        MultimediaNotFound
+
+Fetch group info:   ## done
+    Request:
+        FetchGroup 'name'
+    Response (each line separated with a ';'):
+        GroupInfo 'info'
+    Error:
+        GroupNotFound
+        
+Play a multimedia:  ## done
+    Request:
+        PlayMultimedia 'name'
+    Response:
+        PlayMultimediaSuccess
+    Error:
+        MultimediaNotFound
+
+Fetch multimedia list: ## done
+    Request:
+        FetchMultimediaList
+    Response:
+        MultimediaList 'list'
+
+Fetch group list: ## done
+    Request:
+        FetchGroupList
+    Response:
+        GroupList 'list'
+
+Remove a multimedia: ## done
+    Request:
+        RemoveMultimedia 'name'
+    Response:
+        RemoveMultimediaSuccess
+    Error:
+        MultimediaNotFound
+
+Add a film:     ## done
+    Request:        ## chaptersDuration is a list of integers separated by a sapce character, make sure the size of the array is equal to nbChapters
+        AddFilm [name] 'path' 'duration:int' 'nbChapters:int' 'chaptersDuration:int[]'      
+    Response:
+        AddMultimediaSuccess
+    Error: 
+        InvalidDuration
+        DurationOutOfRange
+        WrongFormat
+
+Add a video:        ## done
+    Request:
+        AddVideo [name] 'path' 'duration:int'
+    Response:
+        AddMultimediaSuccess
+    Error:
+        DurationOutOfRange
+        InvalidDuration
+        WrongFormat
+
+Add an imgae:       ## done
+    Request:
+        AddImage [name] 'path' 'width:flaot' 'height:float'
+    Response:
+        AddMultimediaSuccess
+    Error:
+        DimensionsOutOfRange
+        InvalidDimensions
+        WrongFormat 
+
+Remove a group: ## done
+    Request:
+        RemoveGroup 'name'
+    Response:
+        RemoveGroupSuccess
+    Error:
+        GroupNotFound
+
+Add a group: ## done
+    Request:
+        AddGroup 'name'
+    Response:
+        AddGroupSuccess
+    Error:
+        WrongFormat
+
+Add a multimedia to a group:    ## done
+    Request:
+        AddMultimediaToGroup '[multimediaName]' '[groupName]'
+    Response:
+        AddMultimediaToGroupSuccess
+    Error:
+        MultimediaNotFound
+        GroupNotFound
+        MultimediaAlreadyInGroup
+        WrongFormat
+
+Remove a multimedia from a group:     ## done
+    Request:
+        RemoveMultimediaFromGroup '[multimediaName]' '[groupName]'
+    Response:
+        RemoveMultimediaFromGroupSuccess
+    Error:
+        MultimediaNotFound
+        GroupNotFound
+        MultimediaNotInGroup
+        WrongFormat
+
+Save controller state: ## done
+    Request:
+        SaveControllerState 'path'
+    Response:
+        SaveControllerStateSuccess
+    Error:
+        CouldNotOpenFile
+        ErrorWhileSaving
+
+Load controller state: ## done  
+    Request:
+        LoadControllerState 'path'
+    Response:
+        LoadControllerStateSuccess
+    Error:
+        FileNotFound
+        ErrorWhileLoading
+
+No matching request error message: ## done
+    WrongRequest
+
+

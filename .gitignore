@@ -4,3 +4,6 @@
 .vscode
 Makefile-cliserv
 *.txt
+depend-executable
+executable
+*.class
