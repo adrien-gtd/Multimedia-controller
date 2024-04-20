@@ -111,7 +111,12 @@ int main(int argc, const char *argv[])
   group1->push_front(my_controller->createImage(14, 10, "Mon image 3", "asset/image3.jpeg"));
   group1->push_front(my_controller->createVideo(52, "Ma video 3", "asset/video3.mp4"));
   group1->push_front(my_controller->createFilm(25, "Mon Film 1", "asset/video2.mp4", new int[5]{6, 3, 5, 7, 3}, 5));
-
+  my_controller->createImage(14, 10, "Mon image 6", "asset/image6.jpeg");
+  my_controller->createImage(14, 10, "Mon image 7", "asset/image7.jpeg");
+  my_controller->createImage(14, 10, "Mon image 8", "asset/image8.jpeg");
+  my_controller->createImage(14, 10, "Mon image 9", "asset/image9.jpeg");
+  my_controller->createGroup("Ma liste 1");
+  my_controller->createGroup("Ma liste 2");
   // cree le TCPServer
   auto *server =
       new TCPServer([&](std::string const &request, std::string &response)

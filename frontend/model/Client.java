@@ -103,8 +103,11 @@ public class Client
     return removeFirstWord(send("FetchMultimedia " + multimedia));
   }
 
-  public String fetchGroup(String group) {
-    return removeFirstWord(send("FetchGroup " + group));
+  public List<String> fetchGroup(String multimedia) {
+    String answer = send("FetchGroup " + multimedia);
+    List<String> list = new ArrayList<>(Arrays.asList(answer.split("\n")));
+    list.remove(0);
+    return list;
   }
 
   public void playMultimedia(String multimedia) {
@@ -113,6 +116,10 @@ public class Client
 
   public void deleteMultimedia(String multimedia) {
     send("RemoveMultimedia " + multimedia);
+  }
+
+  public void deleteGroup(String group) {
+    send("RemoveGroup " + group);
   }
 
   private String removeFirstWord(String str) {

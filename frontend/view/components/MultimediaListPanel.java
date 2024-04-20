@@ -1,6 +1,7 @@
 package view.components;
 
 import java.awt.BorderLayout;
+import java.util.List;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
@@ -20,7 +21,7 @@ public class MultimediaListPanel extends JPanel {
         super();
         this.client = client;
         setLayout(new BorderLayout());
-        updateMultimediaList();
+        updateMultimediaList(null);
         jList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -36,10 +37,17 @@ public class MultimediaListPanel extends JPanel {
         add(scrollPane, BorderLayout.CENTER);
     }
 
-    public void updateMultimediaList() {
+    public void updateMultimediaList(List<String> multimediaList) {
         DefaultListModel<String> listModel = new DefaultListModel<>();
-        for (String item : client.fetchMultimediaList()) {
-            listModel.addElement(item);
+        if (multimediaList == null) {
+            for (String item : client.fetchMultimediaList()) {
+                listModel.addElement(item);
+            }
+        }
+        else {
+            for (String item : multimediaList) {
+                listModel.addElement(item);
+            }
         }
         jList.setModel(listModel);
     }

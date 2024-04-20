@@ -3,7 +3,6 @@ import javax.swing.*;
 
 import model.Client;
 import view.components.BarMenu;
-import view.components.GroupPanel;
 import view.components.HomePanel;
 import view.components.MultimediaPanel;
 import view.components.ToolBar;
@@ -13,7 +12,6 @@ import java.awt.*;
 public class MainFrame extends JFrame {
     private HomePanel homePanel;
     private MultimediaPanel multimediaPanel;
-    private GroupPanel groupPanel;
     private CardLayout cardLayout;
     private JPanel cards;
 
@@ -34,9 +32,6 @@ public class MainFrame extends JFrame {
         multimediaPanel = new MultimediaPanel(client, this);
         cards.add(multimediaPanel, "Multimedia");
 
-        this.groupPanel = new GroupPanel(client, this);
-        cards.add(groupPanel, "Group");
-
 
         // Add the toolbar
         ToolBar toolBar = new ToolBar(this);
@@ -54,11 +49,6 @@ public class MainFrame extends JFrame {
     public void selectMultimedia(String multimedia) {
         multimediaPanel.updateMultimedia(multimedia);
         cardLayout.show(cards, "Multimedia");
-    }
-
-    public void selectGroup(String group) {
-        groupPanel.updateGroup(group);
-        cardLayout.show(cards, "Group");
     }
 
     public void selectHome() {

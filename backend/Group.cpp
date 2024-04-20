@@ -27,7 +27,7 @@ void Group::print(std::ostream &stream, char line_separator = '\n') const
     stream << "Content of the list - " << group_name_ << ":" << line_separator;
     for (const auto &element : *this)
     {
-        element->print(stream, line_separator);
+        stream << element->getName();
         stream << line_separator;
     }
 }

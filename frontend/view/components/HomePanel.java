@@ -23,13 +23,13 @@ public class HomePanel extends JPanel {
         this.multimediaPanel = new MultimediaListPanel(client, mainFrame);
         add(multimediaPanel);
 
-        this.groupPanel = new GroupListPanel(client, mainFrame);
+        this.groupPanel = new GroupListPanel(client, mainFrame, multimediaPanel);
         add(groupPanel);
 
         addComponentListener(new ComponentAdapter() {
             public void componentShown(ComponentEvent e) {
                 groupPanel.updateGroupList();
-                multimediaPanel.updateMultimediaList();
+                multimediaPanel.updateMultimediaList(null);
             }
         });
     }
