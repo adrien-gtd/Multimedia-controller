@@ -1,9 +1,9 @@
 package view.components;
 
 import javax.swing.JToolBar;
-import view.components.buttons.ExitButton;
 
 import view.MainFrame;
+import view.components.buttons.ExitButton;
 
 public class ToolBar extends JToolBar {
 

@@ -1,44 +1,48 @@
 package view.components;
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
+import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 import model.Client;
+import view.MainFrame;
+import view.components.buttons.DeleteMultimediaButton;
+import view.components.buttons.PlayButton;
 
-public class MultimediaPanel extends JPanel {
-    Client client;
-    JList<String> jList = new JList<>();
+public class MultimediaPanel extends JPanel{
+    private Client client;
+    private TextAreaCustom textArea;
+    private PlayButton playButton;
+    private DeleteMultimediaButton deleteButton;
 
-    public MultimediaPanel(Client client) {
+    public MultimediaPanel(Client client, MainFrame mainFrame){
         super();
-        this.client = client;
         setLayout(new BorderLayout());
-        updateMultimediaList();
-        jList.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                if (!e.getValueIsAdjusting()) {
-                    String selectedValue = jList.getSelectedValue();
-                    System.out.println(selectedValue);
-                }
-            }
-        });
+        this.client = client;
+        TextAreaCustom textArea = new TextAreaCustom();
+        this.textArea = textArea;
+        add(textArea, BorderLayout.CENTER);
 
-        JScrollPane scrollPane = new JScrollPane(jList);
-        add(scrollPane, BorderLayout.CENTER);
+
+        List<JButton> buttons = new ArrayList<>();
+        playButton = new PlayButton(client);
+        deleteButton = new DeleteMultimediaButton(client, mainFrame);
+
+        buttons.add(playButton);
+        buttons.add(deleteButton);
+
+        ButtonFrame buttonFrame = new ButtonFrame(mainFrame, client, buttons);
+        add(buttonFrame, BorderLayout.SOUTH);
     }
 
-    public void updateMultimediaList() {
-        DefaultListModel<String> listModel = new DefaultListModel<>();
-        for (String item : client.fetchMultimediaList()) {
-            listModel.addElement(item);
-        }
-        jList.setModel(listModel);
+    public void updateMultimedia(String multimedia){
+        deleteButton.setMultimedia(multimedia);
+        playButton.setMultimedia(multimedia);
+        String info = client.fetchMultimedia(multimedia);
+        textArea.getTextArea().setText(info);
+        playButton.setMultimedia(multimedia);
     }
 }

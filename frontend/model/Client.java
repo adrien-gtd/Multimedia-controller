@@ -56,6 +56,8 @@ public class Client
   public String send(String request) {
     // Envoyer la requete au serveur
     try {
+      System.out.println("\n--- Sending Request ---");
+      System.out.println(request);
       request += "\n";  // ajouter le separateur de lignes
       output.write(request, 0, request.length());
       output.flush();
@@ -67,7 +69,10 @@ public class Client
     
     // Recuperer le resultat envoye par le serveur
     try {
-      return input.readLine().replaceAll(";", "\n");
+      String answer = input.readLine().replaceAll(";", "\n");
+      System.out.println("\n--- Received Response ---");
+      System.out.println(answer);
+      return answer;
     }
     catch (java.io.IOException e) {
       System.err.println("Client: Couldn't receive message: " + e);
@@ -93,6 +98,35 @@ public class Client
     return list;
   }
 
+
+  public String fetchMultimedia(String multimedia) {
+    return removeFirstWord(send("FetchMultimedia " + multimedia));
+  }
+
+  public String fetchGroup(String group) {
+    return removeFirstWord(send("FetchGroup " + group));
+  }
+
+  public void playMultimedia(String multimedia) {
+    send("PlayMultimedia " + multimedia);
+  }
+
+  public void deleteMultimedia(String multimedia) {
+    send("RemoveMultimedia " + multimedia);
+  }
+
+  private String removeFirstWord(String str) {
+    if (str == null || str.isEmpty()) {
+        return "";
+    }
+
+    int index = str.indexOf(" ");
+    if (index == -1) { // Single word
+        return "";
+    }
+
+    return str.substring(index + 1);
+}
 
 }
 

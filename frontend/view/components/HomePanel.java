@@ -6,22 +6,24 @@ import java.awt.GridLayout;
 import javax.swing.JPanel;
 
 import model.Client;
+import view.MainFrame;
+
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
 public class HomePanel extends JPanel {
-    MultimediaPanel multimediaPanel;
-    GroupPanel groupPanel;
+    MultimediaListPanel multimediaPanel;
+    GroupListPanel groupPanel;
 
 
-    public HomePanel(Client client) {
+    public HomePanel(Client client, MainFrame mainFrame) {
         super();
         setLayout(new GridLayout(1, 2));
 
-        this.multimediaPanel = new MultimediaPanel(client);
+        this.multimediaPanel = new MultimediaListPanel(client, mainFrame);
         add(multimediaPanel);
 
-        this.groupPanel = new GroupPanel(client);
+        this.groupPanel = new GroupListPanel(client, mainFrame);
         add(groupPanel);
 
         addComponentListener(new ComponentAdapter() {
