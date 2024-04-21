@@ -1,0 +1,164 @@
+\doxysection{Multimedia Class Reference}
+\hypertarget{class_multimedia}{}\label{class_multimedia}\index{Multimedia@{Multimedia}}
+
+
+\doxylink{class_multimedia}{Multimedia} class, base abstract class for multimedia objects.  
+
+
+
+
+{\ttfamily \#include $<$Multimedia.\+h$>$}
+
+Inheritance diagram for Multimedia\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_multimedia}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_multimedia_a8a9e7949df92a64599073536110f8b45}\label{class_multimedia_a8a9e7949df92a64599073536110f8b45} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Multimedia} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_multimedia}{Multimedia} object, print a message to the console. \end{DoxyCompactList}\item 
+\Hypertarget{class_multimedia_a6105129da1041cc546f67fbd79f244f4}\label{class_multimedia_a6105129da1041cc546f67fbd79f244f4} 
+std\+::string {\bfseries get\+Name} () const
+\item 
+\Hypertarget{class_multimedia_a49468e4f13efa636f677405bb09e3afc}\label{class_multimedia_a49468e4f13efa636f677405bb09e3afc} 
+std\+::string {\bfseries get\+Path} () const
+\item 
+\Hypertarget{class_multimedia_ae7587faa573715bcbaa786a0d83f4871}\label{class_multimedia_ae7587faa573715bcbaa786a0d83f4871} 
+void {\bfseries set\+Name} (std\+::string name)
+\item 
+\Hypertarget{class_multimedia_ac2974511809a0946a8d78b3cf11c60c7}\label{class_multimedia_ac2974511809a0946a8d78b3cf11c60c7} 
+void {\bfseries set\+Path} (std\+::string path)
+\item 
+virtual void \mbox{\hyperlink{class_multimedia_ab9f1abe3cf28862069c3a5fe342ade44}{print}} (std\+::ostream \&stream, char line\+\_\+separator) const =0
+\begin{DoxyCompactList}\small\item\em Print the multimedia object, abstract method. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_multimedia_a571bf6bb3f39586c5fb6ef16f336f016}{serialize}} (std\+::ostream \&stream) const =0
+\begin{DoxyCompactList}\small\item\em Serialize the multimedia object to the output stream, abstract method. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_multimedia_aa1e93034f00fd4334e264ab4c64c57aa}{render}} ()=0
+\begin{DoxyCompactList}\small\item\em Render the multimedia object, abstract method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multimedia_ae286736b31f20ab436a100471821bef5}{Multimedia}} (std\+::string name, std\+::string path)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_multimedia}{Multimedia} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multimedia_a42d36031e86129e4ccdc795514d2b1d2}{Multimedia}} (std\+::istream \&stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a multimedia object from an input stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_multimedia_af6e5e21ce9fda40c1068ecedae89bba2}\label{class_multimedia_af6e5e21ce9fda40c1068ecedae89bba2} 
+std\+::string {\bfseries name\+\_\+} \{\}
+\begin{DoxyCompactList}\small\item\em Name of the multimedia object. \end{DoxyCompactList}\item 
+\Hypertarget{class_multimedia_a4c501ff75d876a3f39cee2a1fb647589}\label{class_multimedia_a4c501ff75d876a3f39cee2a1fb647589} 
+std\+::string {\bfseries path\+\_\+} \{\}
+\begin{DoxyCompactList}\small\item\em Path to the multimedia object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_multimedia_ac3456fd331a58b288082abca310c7a99}\label{class_multimedia_ac3456fd331a58b288082abca310c7a99} 
+class {\bfseries Controller}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_multimedia}{Multimedia} class, base abstract class for multimedia objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_multimedia_ae286736b31f20ab436a100471821bef5}\label{class_multimedia_ae286736b31f20ab436a100471821bef5} 
+\index{Multimedia@{Multimedia}!Multimedia@{Multimedia}}
+\index{Multimedia@{Multimedia}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{Multimedia()}{Multimedia()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Multimedia\+::\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Construct a new \doxylink{class_multimedia}{Multimedia} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the multimedia object \\
+\hline
+{\em path} & path to the multimedia object \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multimedia_a42d36031e86129e4ccdc795514d2b1d2}\label{class_multimedia_a42d36031e86129e4ccdc795514d2b1d2} 
+\index{Multimedia@{Multimedia}!Multimedia@{Multimedia}}
+\index{Multimedia@{Multimedia}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{Multimedia()}{Multimedia()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Multimedia\+::\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Deserialize a multimedia object from an input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & input stream \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_multimedia_ab9f1abe3cf28862069c3a5fe342ade44}\label{class_multimedia_ab9f1abe3cf28862069c3a5fe342ade44} 
+\index{Multimedia@{Multimedia}!print@{print}}
+\index{print@{print}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily virtual void Multimedia\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{char}]{line\+\_\+separator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Print the multimedia object, abstract method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream \\
+\hline
+{\em line\+\_\+separator} & line separator \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_film_a52789e7a7e10165b6705bf295eccdb1a}{Film}}, \mbox{\hyperlink{class_image_a071fb04948e0e235f5acd250ae01d698}{Image}}, and \mbox{\hyperlink{class_video_a1f3e860a7d3f144a45b98a8cf01089d2}{Video}}.
+
+\Hypertarget{class_multimedia_aa1e93034f00fd4334e264ab4c64c57aa}\label{class_multimedia_aa1e93034f00fd4334e264ab4c64c57aa} 
+\index{Multimedia@{Multimedia}!render@{render}}
+\index{render@{render}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily virtual void Multimedia\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Render the multimedia object, abstract method. 
+
+
+
+Implemented in \mbox{\hyperlink{class_image_a3bdf7e7098dbaac61162092972de9124}{Image}}, and \mbox{\hyperlink{class_video_aec3eada561b4c31bf2dd227a200f6ed7}{Video}}.
+
+\Hypertarget{class_multimedia_a571bf6bb3f39586c5fb6ef16f336f016}\label{class_multimedia_a571bf6bb3f39586c5fb6ef16f336f016} 
+\index{Multimedia@{Multimedia}!serialize@{serialize}}
+\index{serialize@{serialize}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily virtual void Multimedia\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Serialize the multimedia object to the output stream, abstract method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_film_ac8db5344ede0676e450bfd67a87efe5a}{Film}}, \mbox{\hyperlink{class_image_a669d0261c2c8ffc78a12c17c80c42d7b}{Image}}, and \mbox{\hyperlink{class_video_ae0e2c27aadf08bdf4278b9b07f06c8aa}{Video}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/multimedia/Multimedia.\+h\item 
+backend/multimedia/Multimedia.\+cpp\end{DoxyCompactItemize}

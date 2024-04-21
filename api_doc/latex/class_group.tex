@@ -1,0 +1,156 @@
+\doxysection{Group Class Reference}
+\hypertarget{class_group}{}\label{class_group}\index{Group@{Group}}
+
+
+\doxylink{class_group}{Group} class, contains a list of multimedia objects.  
+
+
+
+
+{\ttfamily \#include $<$Group.\+h$>$}
+
+Inheritance diagram for Group\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_group}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_group_aedf365c9c158196352645b2f026c8f47}{Group}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_group}{Group} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_group_a0a8e9e7834339899d1398506c00b3c7e}{Group}} (std\+::istream \&stream, \mbox{\hyperlink{class_controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\begin{DoxyCompactList}\small\item\em Deserialize an group object from an input stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_group_a80af4dc6bb70c65c96aa699ce2c07d67}{print}} (std\+::ostream \&stream, char line\+\_\+separator) const
+\begin{DoxyCompactList}\small\item\em Print the multimedia elements of the group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_group_a2c8b34bbf606dd34943920f02b69bdf5}{set\+Name}} (std\+::string new\+\_\+group\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Change the name of the group. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_group_a6ad155f9523ba52a43e25e61ce576990}{get\+Group\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_group_a18389a7d2a67498036b377a7dc2d2579}{serialize}} (std\+::ostream \&stream)
+\begin{DoxyCompactList}\small\item\em Serialize the group object to an output stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_group_ab510e4ed7c531021d2c93a2b2da503b3}{remove\+Multimedia}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Remove a multimedia object from the group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_group}{Group} class, contains a list of multimedia objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_group_aedf365c9c158196352645b2f026c8f47}\label{class_group_aedf365c9c158196352645b2f026c8f47} 
+\index{Group@{Group}!Group@{Group}}
+\index{Group@{Group}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{Group()}{Group()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Group\+::\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_group}{Group} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the group \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_group_a0a8e9e7834339899d1398506c00b3c7e}\label{class_group_a0a8e9e7834339899d1398506c00b3c7e} 
+\index{Group@{Group}!Group@{Group}}
+\index{Group@{Group}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{Group()}{Group()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Group\+::\+Group (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream,  }\item[{\mbox{\hyperlink{class_controller}{Controller}} \texorpdfstring{$\ast$}{*}}]{controller }\end{DoxyParamCaption})}
+
+
+
+Deserialize an group object from an input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & input stream \\
+\hline
+{\em controller} & controller object \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_group_a6ad155f9523ba52a43e25e61ce576990}\label{class_group_a6ad155f9523ba52a43e25e61ce576990} 
+\index{Group@{Group}!getGroupName@{getGroupName}}
+\index{getGroupName@{getGroupName}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{getGroupName()}{getGroupName()}}
+{\footnotesize\ttfamily std\+::string Group\+::get\+Group\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the name of the group. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\Hypertarget{class_group_a80af4dc6bb70c65c96aa699ce2c07d67}\label{class_group_a80af4dc6bb70c65c96aa699ce2c07d67} 
+\index{Group@{Group}!print@{print}}
+\index{print@{print}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Group\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{char}]{line\+\_\+separator = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption}) const}
+
+
+
+Print the multimedia elements of the group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream \\
+\hline
+{\em line\+\_\+separator} & line separator \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_group_ab510e4ed7c531021d2c93a2b2da503b3}\label{class_group_ab510e4ed7c531021d2c93a2b2da503b3} 
+\index{Group@{Group}!removeMultimedia@{removeMultimedia}}
+\index{removeMultimedia@{removeMultimedia}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{removeMultimedia()}{removeMultimedia()}}
+{\footnotesize\ttfamily void Group\+::remove\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Remove a multimedia object from the group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the multimedia object \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_group_a18389a7d2a67498036b377a7dc2d2579}\label{class_group_a18389a7d2a67498036b377a7dc2d2579} 
+\index{Group@{Group}!serialize@{serialize}}
+\index{serialize@{serialize}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily void Group\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Serialize the group object to an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_group_a2c8b34bbf606dd34943920f02b69bdf5}\label{class_group_a2c8b34bbf606dd34943920f02b69bdf5} 
+\index{Group@{Group}!setName@{setName}}
+\index{setName@{setName}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Group\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+\_\+group\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Change the name of the group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em multimedia} & new name of the group \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/group/Group.\+h\item 
+backend/group/Group.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,35 @@
+\doxysection{Request\+Handler.\+h}
+\hypertarget{_request_handler_8h_source}{}\label{_request_handler_8h_source}\index{backend/RequestHandler.h@{backend/RequestHandler.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ request\_handler\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ request\_handler\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}controller/Controller.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_request_handler}{RequestHandler}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ fetchMultimedia(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00014\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ fetchGroup(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ playMultimedia(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ fetchMultimediaList(\mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ fetchGroupList(\mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ removeMultimedia(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ removeGroup(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ addGroup(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ addMultimediaToGroup(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ removeMultimediaFromGroup(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ saveControllerState(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ loadControllerState(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ addVideo(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ addImage(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ addFilm(std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00038\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_request_handler_ac55fd90d5a3b76ac53b41d2a222346ce}{handleRequest}}(std::string\ header,\ std::string\ body,\ \mbox{\hyperlink{class_controller}{Controller}}\&\ my\_controller);}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

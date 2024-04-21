@@ -1,0 +1,298 @@
+\doxysection{Film Class Reference}
+\hypertarget{class_film}{}\label{class_film}\index{Film@{Film}}
+
+
+\doxylink{class_film}{Film} class, represents a film object.  
+
+
+
+
+{\ttfamily \#include $<$Film.\+h$>$}
+
+Inheritance diagram for Film\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_film}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_film_a7532cad3e157e00318ceed7e5ce473f1}{get\+Chapter\+Durations}} () const
+\begin{DoxyCompactList}\small\item\em Get the chapter durations array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_film_a094c73971ecbeff3f502894c171c3bf4}{set\+Chapters}} (int \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_film_a7532cad3e157e00318ceed7e5ce473f1}{get\+Chapter\+Durations}}, int nb\+\_\+chapters)
+\begin{DoxyCompactList}\small\item\em Set the chapter durations array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_film_a8f8271ee79a8ecd0c6e00d3db8df5476}{get\+Nb\+Chapters}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of chapters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_film_a52789e7a7e10165b6705bf295eccdb1a}{print}} (std\+::ostream \&stream, char line\+\_\+separator) const override
+\begin{DoxyCompactList}\small\item\em Print the film object to the stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_film_ac8db5344ede0676e450bfd67a87efe5a}{serialize}} (std\+::ostream \&stream) const override
+\begin{DoxyCompactList}\small\item\em Serialize the film object to the output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_video}{Video}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries get\+Duration} () const
+\item 
+void {\bfseries set\+Duration} (int duration)
+\item 
+void \mbox{\hyperlink{class_video_aec3eada561b4c31bf2dd227a200f6ed7}{render}} () override
+\begin{DoxyCompactList}\small\item\em Print the video object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_a1f3e860a7d3f144a45b98a8cf01089d2}{print}} (std\+::ostream \&stream, char line\+\_\+separator) const override
+\begin{DoxyCompactList}\small\item\em Print the video object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_ae0e2c27aadf08bdf4278b9b07f06c8aa}{serialize}} (std\+::ostream \&stream) const override
+\begin{DoxyCompactList}\small\item\em Serialize the video object to the output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Multimedia} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_multimedia}{Multimedia} object, print a message to the console. \end{DoxyCompactList}\item 
+std\+::string {\bfseries get\+Name} () const
+\item 
+std\+::string {\bfseries get\+Path} () const
+\item 
+void {\bfseries set\+Name} (std\+::string name)
+\item 
+void {\bfseries set\+Path} (std\+::string path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_film_a39a9e1280a67ecc62d6bcb1ec74ffd38}{Film}} (int duration, std\+::string name, std\+::string path, int chatpter\+\_\+duration\mbox{[}$\,$\mbox{]}, int nb\+\_\+chapters)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_film}{Film} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_film_aecb6e059b65dc808701783cba7d148c3}{Film}} (std\+::istream \&stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a film object from an input stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_video}{Video}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_video_a4e537d2d8a862a0e1332503035cab363}{Video}} (std\+::istream \&stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a video object from an input stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_video_a62a52d0fc266d2b33a9876d96e64d2ea}{Video}} (int duration, std\+::string name, std\+::string path)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_video}{Video} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multimedia_ae286736b31f20ab436a100471821bef5}{Multimedia}} (std\+::string name, std\+::string path)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_multimedia}{Multimedia} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multimedia_a42d36031e86129e4ccdc795514d2b1d2}{Multimedia}} (std\+::istream \&stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a multimedia object from an input stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_film}{Film}} $>$ \mbox{\hyperlink{class_film_a8689710837f6486178f008f355a9afdb}{make\+Shared\+Film}} (int duration, std\+::string name, std\+::string path, int chatpter\+\_\+duration\mbox{[}$\,$\mbox{]}, int nb\+\_\+chapters)
+\begin{DoxyCompactList}\small\item\em Create a shared pointer to a film object, only accessible by the \doxylink{class_controller}{Controller} class. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_film}{Film}} $>$ \mbox{\hyperlink{class_film_a7e81034370ca15f4023957072f962be3}{make\+Shared\+Film}} (std\+::istream \&stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a film object from an input stream and returns a shared pointer of it, only accessible by the \doxylink{class_controller}{Controller} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_video}{Video}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_video}{Video}} $>$ \mbox{\hyperlink{class_video_af293441a94f2810954195716712e9117}{make\+Shared\+Video}} (int duration, std\+::string name, std\+::string path)
+\begin{DoxyCompactList}\small\item\em Create a shared pointer to a video object, only accessible by the \doxylink{class_controller}{Controller} class. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_video}{Video}} $>$ \mbox{\hyperlink{class_video_a29e8b7a8a46fed51981bfc81a9a541f6}{make\+Shared\+Video}} (std\+::istream \&stream)
+\begin{DoxyCompactList}\small\item\em Deserialize the \doxylink{class_video}{Video} object from the input stream and returns a smart pointer, only accessible by the \doxylink{class_controller}{Controller} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_film_ad9c538ff5f681fe89cfb907abfd17a73}\label{class_film_ad9c538ff5f681fe89cfb907abfd17a73} 
+int \texorpdfstring{$\ast$}{*} {\bfseries chapter\+\_\+durations\+\_\+} \{\}
+\begin{DoxyCompactList}\small\item\em Array of chapter durations. \end{DoxyCompactList}\item 
+\Hypertarget{class_film_a4f43111dc18e1902b4ab73215a71559d}\label{class_film_a4f43111dc18e1902b4ab73215a71559d} 
+int {\bfseries nb\+\_\+chapters\+\_\+} \{\}
+\begin{DoxyCompactList}\small\item\em Number of chapters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_video}{Video}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries duration\+\_\+} \{\}
+\begin{DoxyCompactList}\small\item\em Duration of the video. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries name\+\_\+} \{\}
+\begin{DoxyCompactList}\small\item\em Name of the multimedia object. \end{DoxyCompactList}\item 
+std\+::string {\bfseries path\+\_\+} \{\}
+\begin{DoxyCompactList}\small\item\em Path to the multimedia object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_film_ac3456fd331a58b288082abca310c7a99}\label{class_film_ac3456fd331a58b288082abca310c7a99} 
+class {\bfseries Controller}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_film}{Film} class, represents a film object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_film_a39a9e1280a67ecc62d6bcb1ec74ffd38}\label{class_film_a39a9e1280a67ecc62d6bcb1ec74ffd38} 
+\index{Film@{Film}!Film@{Film}}
+\index{Film@{Film}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{Film()}{Film()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Film\+::\+Film (\begin{DoxyParamCaption}\item[{int}]{duration,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{path,  }\item[{int}]{chatpter\+\_\+duration\mbox{[}$\,$\mbox{]},  }\item[{int}]{nb\+\_\+chapters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Construct a new \doxylink{class_film}{Film} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & duration of the film \\
+\hline
+{\em name} & name of the film \\
+\hline
+{\em path} & path to the film file \\
+\hline
+{\em chatpter\+\_\+duration} & array of chapter durations \\
+\hline
+{\em nb\+\_\+chapters} & number of chapters \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_film_aecb6e059b65dc808701783cba7d148c3}\label{class_film_aecb6e059b65dc808701783cba7d148c3} 
+\index{Film@{Film}!Film@{Film}}
+\index{Film@{Film}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{Film()}{Film()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Film\+::\+Film (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Deserialize a film object from an input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & input stream \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_film_a7532cad3e157e00318ceed7e5ce473f1}\label{class_film_a7532cad3e157e00318ceed7e5ce473f1} 
+\index{Film@{Film}!getChapterDurations@{getChapterDurations}}
+\index{getChapterDurations@{getChapterDurations}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getChapterDurations()}{getChapterDurations()}}
+{\footnotesize\ttfamily int \texorpdfstring{$\ast$}{*} Film\+::get\+Chapter\+Durations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the chapter durations array. 
+
+\begin{DoxyReturn}{Returns}
+int\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{class_film_a8f8271ee79a8ecd0c6e00d3db8df5476}\label{class_film_a8f8271ee79a8ecd0c6e00d3db8df5476} 
+\index{Film@{Film}!getNbChapters@{getNbChapters}}
+\index{getNbChapters@{getNbChapters}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getNbChapters()}{getNbChapters()}}
+{\footnotesize\ttfamily int Film\+::get\+Nb\+Chapters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of chapters. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{class_film_a8689710837f6486178f008f355a9afdb}\label{class_film_a8689710837f6486178f008f355a9afdb} 
+\index{Film@{Film}!makeSharedFilm@{makeSharedFilm}}
+\index{makeSharedFilm@{makeSharedFilm}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{makeSharedFilm()}{makeSharedFilm()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_film}{Film}} $>$ Film\+::make\+Shared\+Film (\begin{DoxyParamCaption}\item[{int}]{duration,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{path,  }\item[{int}]{chatpter\+\_\+duration\mbox{[}$\,$\mbox{]},  }\item[{int}]{nb\+\_\+chapters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Create a shared pointer to a film object, only accessible by the \doxylink{class_controller}{Controller} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & duration of the film \\
+\hline
+{\em name} & name of the film \\
+\hline
+{\em path} & path to the film file \\
+\hline
+{\em chatpter\+\_\+duration} & array of chapter durations \\
+\hline
+{\em nb\+\_\+chapters} & number of chapters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Film$>$ 
+\end{DoxyReturn}
+\Hypertarget{class_film_a7e81034370ca15f4023957072f962be3}\label{class_film_a7e81034370ca15f4023957072f962be3} 
+\index{Film@{Film}!makeSharedFilm@{makeSharedFilm}}
+\index{makeSharedFilm@{makeSharedFilm}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{makeSharedFilm()}{makeSharedFilm()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_film}{Film}} $>$ Film\+::make\+Shared\+Film (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Deserialize a film object from an input stream and returns a shared pointer of it, only accessible by the \doxylink{class_controller}{Controller} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & input stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Film$>$ 
+\end{DoxyReturn}
+\Hypertarget{class_film_a52789e7a7e10165b6705bf295eccdb1a}\label{class_film_a52789e7a7e10165b6705bf295eccdb1a} 
+\index{Film@{Film}!print@{print}}
+\index{print@{print}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Film\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{char}]{line\+\_\+separator = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print the film object to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream \\
+\hline
+{\em line\+\_\+separator} & line separator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_multimedia_ab9f1abe3cf28862069c3a5fe342ade44}{Multimedia}}.
+
+\Hypertarget{class_film_ac8db5344ede0676e450bfd67a87efe5a}\label{class_film_ac8db5344ede0676e450bfd67a87efe5a} 
+\index{Film@{Film}!serialize@{serialize}}
+\index{serialize@{serialize}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily void Film\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serialize the film object to the output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_multimedia_a571bf6bb3f39586c5fb6ef16f336f016}{Multimedia}}.
+
+\Hypertarget{class_film_a094c73971ecbeff3f502894c171c3bf4}\label{class_film_a094c73971ecbeff3f502894c171c3bf4} 
+\index{Film@{Film}!setChapters@{setChapters}}
+\index{setChapters@{setChapters}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{setChapters()}{setChapters()}}
+{\footnotesize\ttfamily void Film\+::set\+Chapters (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{get\+Chapter\+Durations,  }\item[{int}]{nb\+\_\+chapters }\end{DoxyParamCaption})}
+
+
+
+Set the chapter durations array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em get\+Chapter\+Durations} & array of chapter durations \\
+\hline
+{\em nb\+\_\+chapters} & number of chapters \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/multimedia/Film.\+h\item 
+backend/multimedia/Film.\+cpp\end{DoxyCompactItemize}

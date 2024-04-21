@@ -1,0 +1,1 @@
+Pour compiler et executer le serveur et l'interface graphique, utiliser "make run" dans les dossiers cpp et swing respectivement.

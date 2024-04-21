@@ -1,0 +1,76 @@
+\doxysection{Controller.\+h}
+\hypertarget{_controller_8h_source}{}\label{_controller_8h_source}\index{backend/controller/Controller.h@{backend/controller/Controller.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ controller\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ controller\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../multimedia/Multimedia.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../group/Group.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../multimedia/Film.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../multimedia/Video.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../multimedia/Image.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_group}{Group}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ }MultimediaPtr\ =\ std::shared\_ptr<Multimedia>;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ }GroupPtr\ =\ std::shared\_ptr<Group>;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_controller}{Controller}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ std::map<std::string,\ MultimediaPtr>\ multimedia\_map\_\{\};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \ \ \ \ std::map<std::string,\ GroupPtr>\ group\_map\_\{\};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_controller}{Controller}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_controller}{\string~Controller}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00052\ \ \ \ \ MultimediaPtr\ \mbox{\hyperlink{class_controller_a2d61b20889d0a6fad129fbed0b7c6876}{createFilm}}(\textcolor{keywordtype}{int}\ duration,\ std::string\ name,\ std::string\ path,\ \textcolor{keywordtype}{int}\ chatpter\_duration[],\ \textcolor{keywordtype}{int}\ nb\_chapters);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00062\ \ \ \ \ MultimediaPtr\ \mbox{\hyperlink{class_controller_a5d472f384403787b1ad34a4d4d7d859b}{createVideo}}(\textcolor{keywordtype}{int}\ duration,\ std::string\ name,\ std::string\ path);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00073\ \ \ \ \ MultimediaPtr\ \mbox{\hyperlink{class_controller_a79bcf4439ea496d2ed36d3bdc7dfa379}{createImage}}(\textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height,\ std::string\ name,\ std::string\ path);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \ \ \ \ MultimediaPtr\ \mbox{\hyperlink{class_controller_a8c076fdbd65e9f601687b3ad3a6beb89}{getMultimedia}}(std::string\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_controller_a69a82a4d5e6e7e7e24119734776de703}{playMultimedia}}(std::string\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_aa1054b4255459ac212474678b61cd112}{printMultimedia}}(std::string\ name,\ std::ostream\&\ stream,\ \textcolor{keywordtype}{char}\ line\_separator\ =\ \textcolor{charliteral}{'\(\backslash\)n'})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ GroupPtr\ \mbox{\hyperlink{class_controller_a9b60ff409f1c46ff99c9e499bc308a31}{createGroup}}(std::string\ name);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_controller_ababacaedd5c01607d38ded1d769d3085}{addMultimediaToGroup}}(std::string\ group\_name,\ std::string\ multimedia\_name);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_controller_acf3add3e2a7b3ff589dec0d96f95eeb3}{removeMultimediaFromGroup}}(std::string\ group\_name,\ std::string\ multimedia\_name);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00132\ \ \ \ \ GroupPtr\ \mbox{\hyperlink{class_controller_a3bb22e28c10e3b94a515a791fc18f920}{getGroup}}(std::string\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_a291680e7abf83beb324225d2a8ee69ce}{printGroup}}(std::string\ name,\ std::ostream\&\ stream,\ \textcolor{keywordtype}{char}\ line\_separator)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_a760072cbac9aef1019a958db280525a6}{printAllMultimedia}}(std::ostream\&\ stream,\ \textcolor{keywordtype}{char}\ line\_separator\ =\ \textcolor{charliteral}{'\(\backslash\)n'})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_ac40afc1151af068c4c241610756a3dea}{printAllGroup}}(std::ostream\&\ stream,\ \textcolor{keywordtype}{char}\ line\_separator\ =\ \textcolor{charliteral}{'\(\backslash\)n'})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_a0414ee43493f338857d7e317227a8b4b}{serializeMultimedia}}(std::ostream\&\ stream)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_a85a0ae8128b8ff07abcd7b0eaeca0024}{deserializeMultimedia}}(std::istream\ \&\ stream);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_a5903f82c44c77779a8e3a466f06812d3}{serialize}}(std::ostream\&\ stream)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_ac56e61463674f205d2a7325428c3664f}{deserialize}}(std::istream\ \&\ stream);}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_controller_afc03ee71ab2c3f905cc34bfa86587598}{deleteMultimedia}}(std::string\ name);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_controller_a006f65cdb008b0928e1350994b26a6bd}{deleteGroup}}(std::string\ name);}
+\DoxyCodeLine{00203\ \};}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

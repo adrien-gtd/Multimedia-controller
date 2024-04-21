@@ -1,0 +1,50 @@
+\doxysection{Request\+Handler Class Reference}
+\hypertarget{class_request_handler}{}\label{class_request_handler}\index{RequestHandler@{RequestHandler}}
+
+
+\doxylink{class_request_handler}{Request\+Handler} class, utility class to handle the request and return the response after processing the request see the communication\+\_\+protocol\+\_\+template for more details.  
+
+
+
+
+{\ttfamily \#include $<$Request\+Handler.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{class_request_handler_ac55fd90d5a3b76ac53b41d2a222346ce}{handle\+Request}} (std\+::string header, std\+::string body, \mbox{\hyperlink{class_controller}{Controller}} \&my\+\_\+controller)
+\begin{DoxyCompactList}\small\item\em Handle the request and return the response after processing the request see the communication\+\_\+protocol\+\_\+template for more details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_request_handler}{Request\+Handler} class, utility class to handle the request and return the response after processing the request see the communication\+\_\+protocol\+\_\+template for more details. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_request_handler_ac55fd90d5a3b76ac53b41d2a222346ce}\label{class_request_handler_ac55fd90d5a3b76ac53b41d2a222346ce} 
+\index{RequestHandler@{RequestHandler}!handleRequest@{handleRequest}}
+\index{handleRequest@{handleRequest}!RequestHandler@{RequestHandler}}
+\doxysubsubsection{\texorpdfstring{handleRequest()}{handleRequest()}}
+{\footnotesize\ttfamily std\+::string Request\+Handler\+::handle\+Request (\begin{DoxyParamCaption}\item[{std\+::string}]{header,  }\item[{std\+::string}]{body,  }\item[{\mbox{\hyperlink{class_controller}{Controller}} \&}]{my\+\_\+controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handle the request and return the response after processing the request see the communication\+\_\+protocol\+\_\+template for more details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & header of the request \\
+\hline
+{\em body} & body of the request \\
+\hline
+{\em my\+\_\+controller} & controller object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/Request\+Handler.\+h\item 
+backend/Request\+Handler.\+cpp\end{DoxyCompactItemize}

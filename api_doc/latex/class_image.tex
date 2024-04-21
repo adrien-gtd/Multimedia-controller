@@ -1,0 +1,241 @@
+\doxysection{Image Class Reference}
+\hypertarget{class_image}{}\label{class_image}\index{Image@{Image}}
+
+
+\doxylink{class_image}{Image} class, represents an image object.  
+
+
+
+
+{\ttfamily \#include $<$Image.\+h$>$}
+
+Inheritance diagram for Image\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_image}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_image_a17a1d6993640492f0c31a6720087d8a5}\label{class_image_a17a1d6993640492f0c31a6720087d8a5} 
+float {\bfseries get\+Width} () const
+\item 
+\Hypertarget{class_image_a587eb0e12093b00c6d47ba2b46324679}\label{class_image_a587eb0e12093b00c6d47ba2b46324679} 
+float {\bfseries get\+Height} () const
+\item 
+\Hypertarget{class_image_a5b31569550fedea9ead914477a77367f}\label{class_image_a5b31569550fedea9ead914477a77367f} 
+void {\bfseries set\+Width} (float width)
+\item 
+\Hypertarget{class_image_ab19119ddc64a3b7f281907a16fb2a416}\label{class_image_ab19119ddc64a3b7f281907a16fb2a416} 
+void {\bfseries set\+Height} (float height)
+\item 
+void \mbox{\hyperlink{class_image_a3bdf7e7098dbaac61162092972de9124}{render}} () override
+\begin{DoxyCompactList}\small\item\em Render the image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_image_a071fb04948e0e235f5acd250ae01d698}{print}} (std\+::ostream \&stream, char line\+\_\+separator) const override
+\begin{DoxyCompactList}\small\item\em Print the image object to the output stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_image_a669d0261c2c8ffc78a12c17c80c42d7b}{serialize}} (std\+::ostream \&stream) const override
+\begin{DoxyCompactList}\small\item\em Serialize the image object to the output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Multimedia} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_multimedia}{Multimedia} object, print a message to the console. \end{DoxyCompactList}\item 
+std\+::string {\bfseries get\+Name} () const
+\item 
+std\+::string {\bfseries get\+Path} () const
+\item 
+void {\bfseries set\+Name} (std\+::string name)
+\item 
+void {\bfseries set\+Path} (std\+::string path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_image_a9633bc880be9da1009bc89e7be1e99e0}{Image}} (float width, float height, std\+::string name, std\+::string path)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_image}{Image} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image_a01fb882ab2febaf64e852345304ebb39}{Image}} (std\+::istream \&stream)
+\begin{DoxyCompactList}\small\item\em Deserialize an image object from an input stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multimedia_ae286736b31f20ab436a100471821bef5}{Multimedia}} (std\+::string name, std\+::string path)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_multimedia}{Multimedia} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multimedia_a42d36031e86129e4ccdc795514d2b1d2}{Multimedia}} (std\+::istream \&stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a multimedia object from an input stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_image}{Image}} $>$ \mbox{\hyperlink{class_image_ad03af3867a472819b2782db89ba00d8c}{make\+Shared\+Image}} (float width, float height, std\+::string name, std\+::string path)
+\begin{DoxyCompactList}\small\item\em Create a shared pointer to an image object, only accessible by the \doxylink{class_controller}{Controller} class. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_image}{Image}} $>$ \mbox{\hyperlink{class_image_a61f8069374ec082751aa3469e70f7e90}{make\+Shared\+Image}} (std\+::istream \&stream)
+\begin{DoxyCompactList}\small\item\em Deserialize the \doxylink{class_image}{Image} object from the input stream and returns a smart pointer, only accessible by the \doxylink{class_controller}{Controller} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_image_a0cca92b44c0b49d6c513b66cd444cac9}\label{class_image_a0cca92b44c0b49d6c513b66cd444cac9} 
+float {\bfseries width\+\_\+} \{\}
+\begin{DoxyCompactList}\small\item\em Width and height of the image. \end{DoxyCompactList}\item 
+\Hypertarget{class_image_a78b3f0cf41a45e2f92cd57f86e9d5148}\label{class_image_a78b3f0cf41a45e2f92cd57f86e9d5148} 
+float {\bfseries height\+\_\+} \{\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries name\+\_\+} \{\}
+\begin{DoxyCompactList}\small\item\em Name of the multimedia object. \end{DoxyCompactList}\item 
+std\+::string {\bfseries path\+\_\+} \{\}
+\begin{DoxyCompactList}\small\item\em Path to the multimedia object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_image_ac3456fd331a58b288082abca310c7a99}\label{class_image_ac3456fd331a58b288082abca310c7a99} 
+class {\bfseries Controller}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_image}{Image} class, represents an image object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_image_a9633bc880be9da1009bc89e7be1e99e0}\label{class_image_a9633bc880be9da1009bc89e7be1e99e0} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Construct a new \doxylink{class_image}{Image} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em name} & name of the image \\
+\hline
+{\em path} & path to the image file \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a01fb882ab2febaf64e852345304ebb39}\label{class_image_a01fb882ab2febaf64e852345304ebb39} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Deserialize an image object from an input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & input stream \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_image_ad03af3867a472819b2782db89ba00d8c}\label{class_image_ad03af3867a472819b2782db89ba00d8c} 
+\index{Image@{Image}!makeSharedImage@{makeSharedImage}}
+\index{makeSharedImage@{makeSharedImage}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{makeSharedImage()}{makeSharedImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_image}{Image}} $>$ Image\+::make\+Shared\+Image (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Create a shared pointer to an image object, only accessible by the \doxylink{class_controller}{Controller} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em name} & name of the image \\
+\hline
+{\em path} & path to the image file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Image$>$ 
+\end{DoxyReturn}
+\Hypertarget{class_image_a61f8069374ec082751aa3469e70f7e90}\label{class_image_a61f8069374ec082751aa3469e70f7e90} 
+\index{Image@{Image}!makeSharedImage@{makeSharedImage}}
+\index{makeSharedImage@{makeSharedImage}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{makeSharedImage()}{makeSharedImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_image}{Image}} $>$ Image\+::make\+Shared\+Image (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Deserialize the \doxylink{class_image}{Image} object from the input stream and returns a smart pointer, only accessible by the \doxylink{class_controller}{Controller} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & input stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Image$>$ 
+\end{DoxyReturn}
+\Hypertarget{class_image_a071fb04948e0e235f5acd250ae01d698}\label{class_image_a071fb04948e0e235f5acd250ae01d698} 
+\index{Image@{Image}!print@{print}}
+\index{print@{print}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Image\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{char}]{line\+\_\+separator = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print the image object to the output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream \\
+\hline
+{\em line\+\_\+separator} & line separator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_multimedia_ab9f1abe3cf28862069c3a5fe342ade44}{Multimedia}}.
+
+\Hypertarget{class_image_a3bdf7e7098dbaac61162092972de9124}\label{class_image_a3bdf7e7098dbaac61162092972de9124} 
+\index{Image@{Image}!render@{render}}
+\index{render@{render}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Image\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Render the image. 
+
+
+
+Implements \mbox{\hyperlink{class_multimedia_aa1e93034f00fd4334e264ab4c64c57aa}{Multimedia}}.
+
+\Hypertarget{class_image_a669d0261c2c8ffc78a12c17c80c42d7b}\label{class_image_a669d0261c2c8ffc78a12c17c80c42d7b} 
+\index{Image@{Image}!serialize@{serialize}}
+\index{serialize@{serialize}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily void Image\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serialize the image object to the output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_multimedia_a571bf6bb3f39586c5fb6ef16f336f016}{Multimedia}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/multimedia/Image.\+h\item 
+backend/multimedia/Image.\+cpp\end{DoxyCompactItemize}

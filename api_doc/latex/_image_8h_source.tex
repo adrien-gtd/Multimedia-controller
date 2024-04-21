@@ -1,0 +1,44 @@
+\doxysection{Image.\+h}
+\hypertarget{_image_8h_source}{}\label{_image_8h_source}\index{backend/multimedia/Image.h@{backend/multimedia/Image.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ image\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ image\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Multimedia.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_controller}{Controller}};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_image}{Image}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_image_a0cca92b44c0b49d6c513b66cd444cac9}{width\_}}\{\},\ height\_\{\};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_image_a9633bc880be9da1009bc89e7be1e99e0}{Image}}(\textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height,\ std::string\ name,\ std::string\ path)\ :\ \mbox{\hyperlink{class_multimedia}{Multimedia}}(name,\ path),\ \mbox{\hyperlink{class_image_a0cca92b44c0b49d6c513b66cd444cac9}{width\_}}\{width\},\ height\_\{height\}\ \{\}}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}(std::istream\&\ stream);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Image>\ \mbox{\hyperlink{class_image_ad03af3867a472819b2782db89ba00d8c}{makeSharedImage}}(\textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height,\ std::string\ name,\ std::string\ path)\ \{\ \textcolor{keywordflow}{return}\ std::shared\_ptr<Image>(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_image}{Image}}(width,\ height,\ name,\ path));\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Image>\ \mbox{\hyperlink{class_image_a61f8069374ec082751aa3469e70f7e90}{makeSharedImage}}(std::istream\&\ stream)\ \{\ \textcolor{keywordflow}{return}\ std::shared\_ptr<Image>(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_image}{Image}}(stream));\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_controller}{Controller}};}
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_image}{\string~Image}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{float}\ getWidth()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_image_a0cca92b44c0b49d6c513b66cd444cac9}{width\_}};\ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{float}\ getHeight()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ height\_;\ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ setWidth(\textcolor{keywordtype}{float}\ width)\ \{\ \mbox{\hyperlink{class_image_a0cca92b44c0b49d6c513b66cd444cac9}{width\_}}\ =\ width;\ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ setHeight(\textcolor{keywordtype}{float}\ height)\ \{\ height\_\ =\ height;\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_a3bdf7e7098dbaac61162092972de9124}{render}}()\textcolor{keyword}{\ override\ }\{\ system((\textcolor{stringliteral}{"{}open\ "{}}\ +\ \mbox{\hyperlink{class_multimedia_a4c501ff75d876a3f39cee2a1fb647589}{path\_}}\ +\ \textcolor{stringliteral}{"{}\ \&"{}}).data());\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_a071fb04948e0e235f5acd250ae01d698}{print}}(std::ostream\ \&stream,\ \textcolor{keywordtype}{char}\ line\_separator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_a669d0261c2c8ffc78a12c17c80c42d7b}{serialize}}(std::ostream\ \&\ stream)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+\doxysection{Video.\+h}
+\hypertarget{_video_8h_source}{}\label{_video_8h_source}\index{backend/multimedia/Video.h@{backend/multimedia/Video.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ video\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ video\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Multimedia.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_controller}{Controller}};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_video}{Video}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_video_acc5b386f84afdf9b306e9c420046d734}{duration\_}}\{\};}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_video}{Video}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_video}{Video}}(std::istream\ \&\ stream);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_video_a62a52d0fc266d2b33a9876d96e64d2ea}{Video}}(\textcolor{keywordtype}{int}\ duration,\ std::string\ name,\ std::string\ path)\ :\ \mbox{\hyperlink{class_multimedia}{Multimedia}}(name,\ path),\ \mbox{\hyperlink{class_video_acc5b386f84afdf9b306e9c420046d734}{duration\_}}\{duration\}\ \{\}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Video>\ \mbox{\hyperlink{class_video_af293441a94f2810954195716712e9117}{makeSharedVideo}}(\textcolor{keywordtype}{int}\ duration,\ std::string\ name,\ std::string\ path)\ \{\ \textcolor{keywordflow}{return}\ std::shared\_ptr<Video>(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_video}{Video}}(duration,\ name,\ path));\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Video>\ \mbox{\hyperlink{class_video_a29e8b7a8a46fed51981bfc81a9a541f6}{makeSharedVideo}}(std::istream\ \&\ stream)\ \{\ \textcolor{keywordflow}{return}\ std::shared\_ptr<Video>(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_video}{Video}}(stream));\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_controller}{Controller}};}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_video}{\string~Video}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ getDuration()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_video_acc5b386f84afdf9b306e9c420046d734}{duration\_}};\ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ setDuration(\textcolor{keywordtype}{int}\ duration)\ \{\ \mbox{\hyperlink{class_video_acc5b386f84afdf9b306e9c420046d734}{duration\_}}\ =\ duration;\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_video_aec3eada561b4c31bf2dd227a200f6ed7}{render}}()\textcolor{keyword}{\ override\ }\{\ system((\textcolor{stringliteral}{"{}mpv\ "{}}\ +\ \mbox{\hyperlink{class_multimedia_a4c501ff75d876a3f39cee2a1fb647589}{path\_}}\ +\ \textcolor{stringliteral}{"{}\ \&"{}}).data());\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_video_a1f3e860a7d3f144a45b98a8cf01089d2}{print}}(std::ostream\ \&stream,\ \textcolor{keywordtype}{char}\ line\_separator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_video_ae0e2c27aadf08bdf4278b9b07f06c8aa}{serialize}}(std::ostream\ \&\ stream)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,416 @@
+\doxysection{Controller Class Reference}
+\hypertarget{class_controller}{}\label{class_controller}\index{Controller@{Controller}}
+
+
+\doxylink{class_controller}{Controller} class, manages the multimedia objects and the group objects.  
+
+
+
+
+{\ttfamily \#include $<$Controller.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Multimedia\+Ptr \mbox{\hyperlink{class_controller_a2d61b20889d0a6fad129fbed0b7c6876}{create\+Film}} (int duration, std\+::string name, std\+::string path, int chatpter\+\_\+duration\mbox{[}$\,$\mbox{]}, int nb\+\_\+chapters)
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{class_film}{Film} object. \end{DoxyCompactList}\item 
+Multimedia\+Ptr \mbox{\hyperlink{class_controller_a5d472f384403787b1ad34a4d4d7d859b}{create\+Video}} (int duration, std\+::string name, std\+::string path)
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{class_video}{Video} object. \end{DoxyCompactList}\item 
+Multimedia\+Ptr \mbox{\hyperlink{class_controller_a79bcf4439ea496d2ed36d3bdc7dfa379}{create\+Image}} (float width, float height, std\+::string name, std\+::string path)
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{class_image}{Image} object. \end{DoxyCompactList}\item 
+Multimedia\+Ptr \mbox{\hyperlink{class_controller_a8c076fdbd65e9f601687b3ad3a6beb89}{get\+Multimedia}} (std\+::string name) const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_multimedia}{Multimedia} object with the name "{}name"{} from the multimedia map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_controller_a69a82a4d5e6e7e7e24119734776de703}{play\+Multimedia}} (std\+::string name) const
+\begin{DoxyCompactList}\small\item\em Print the multimedia object with the name "{}name"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_aa1054b4255459ac212474678b61cd112}{print\+Multimedia}} (std\+::string name, std\+::ostream \&stream, char line\+\_\+separator=\textquotesingle{}\textbackslash{}n\textquotesingle{}) const
+\begin{DoxyCompactList}\small\item\em Print the multimedia object with the name "{}name"{} to the stream. \end{DoxyCompactList}\item 
+Group\+Ptr \mbox{\hyperlink{class_controller_a9b60ff409f1c46ff99c9e499bc308a31}{create\+Group}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{class_group}{Group} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_controller_ababacaedd5c01607d38ded1d769d3085}{add\+Multimedia\+To\+Group}} (std\+::string group\+\_\+name, std\+::string multimedia\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Add a multimedia object to a group. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_controller_acf3add3e2a7b3ff589dec0d96f95eeb3}{remove\+Multimedia\+From\+Group}} (std\+::string group\+\_\+name, std\+::string multimedia\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Remove a multimedia object from a group. \end{DoxyCompactList}\item 
+Group\+Ptr \mbox{\hyperlink{class_controller_a3bb22e28c10e3b94a515a791fc18f920}{get\+Group}} (std\+::string name) const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_group}{Group} object with the name "{}name"{} from the group map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a291680e7abf83beb324225d2a8ee69ce}{print\+Group}} (std\+::string name, std\+::ostream \&stream, char line\+\_\+separator) const
+\begin{DoxyCompactList}\small\item\em Print the content of the group object with the name "{}name"{} to the stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a760072cbac9aef1019a958db280525a6}{print\+All\+Multimedia}} (std\+::ostream \&stream, char line\+\_\+separator=\textquotesingle{}\textbackslash{}n\textquotesingle{}) const
+\begin{DoxyCompactList}\small\item\em Print all multimedia objects in the map to the stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_ac40afc1151af068c4c241610756a3dea}{print\+All\+Group}} (std\+::ostream \&stream, char line\+\_\+separator=\textquotesingle{}\textbackslash{}n\textquotesingle{}) const
+\begin{DoxyCompactList}\small\item\em Print all group objects in the map to the stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a0414ee43493f338857d7e317227a8b4b}{serialize\+Multimedia}} (std\+::ostream \&stream) const
+\begin{DoxyCompactList}\small\item\em Serialize the multimedia map to the output stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a85a0ae8128b8ff07abcd7b0eaeca0024}{deserialize\+Multimedia}} (std\+::istream \&stream)
+\begin{DoxyCompactList}\small\item\em Deserialize the multimedia map from the input stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a5903f82c44c77779a8e3a466f06812d3}{serialize}} (std\+::ostream \&stream) const
+\begin{DoxyCompactList}\small\item\em Serialize the controller to the output stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_ac56e61463674f205d2a7325428c3664f}{deserialize}} (std\+::istream \&stream)
+\begin{DoxyCompactList}\small\item\em Deserialize the controller from the input stream. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_controller_afc03ee71ab2c3f905cc34bfa86587598}{delete\+Multimedia}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Delete the multimedia object with name "{}name"{} from the multimedia map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_controller_a006f65cdb008b0928e1350994b26a6bd}{delete\+Group}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Delete the group object with name "{}name"{} from the group map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_controller}{Controller} class, manages the multimedia objects and the group objects. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_controller_ababacaedd5c01607d38ded1d769d3085}\label{class_controller_ababacaedd5c01607d38ded1d769d3085} 
+\index{Controller@{Controller}!addMultimediaToGroup@{addMultimediaToGroup}}
+\index{addMultimediaToGroup@{addMultimediaToGroup}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{addMultimediaToGroup()}{addMultimediaToGroup()}}
+{\footnotesize\ttfamily int Controller\+::add\+Multimedia\+To\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{group\+\_\+name,  }\item[{std\+::string}]{multimedia\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Add a multimedia object to a group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & name of the group \\
+\hline
+{\em multimedia\+\_\+name} & name of the multimedia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 if the multimedia is added to the group, -\/1 otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_controller_a2d61b20889d0a6fad129fbed0b7c6876}\label{class_controller_a2d61b20889d0a6fad129fbed0b7c6876} 
+\index{Controller@{Controller}!createFilm@{createFilm}}
+\index{createFilm@{createFilm}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{createFilm()}{createFilm()}}
+{\footnotesize\ttfamily Multimedia\+Ptr Controller\+::create\+Film (\begin{DoxyParamCaption}\item[{int}]{duration,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{path,  }\item[{int}]{chatpter\+\_\+duration\mbox{[}$\,$\mbox{]},  }\item[{int}]{nb\+\_\+chapters }\end{DoxyParamCaption})}
+
+
+
+Create a \doxylink{class_film}{Film} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & duration of the film \\
+\hline
+{\em name} & name of the film \\
+\hline
+{\em path} & path of the film \\
+\hline
+{\em chatpter\+\_\+duration} & array of chapter duration \\
+\hline
+{\em nb\+\_\+chapters} & number of chapters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Multimedia\+Ptr (shared\+\_\+ptr$<$\+Multimedia$>$) 
+\end{DoxyReturn}
+\Hypertarget{class_controller_a9b60ff409f1c46ff99c9e499bc308a31}\label{class_controller_a9b60ff409f1c46ff99c9e499bc308a31} 
+\index{Controller@{Controller}!createGroup@{createGroup}}
+\index{createGroup@{createGroup}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{createGroup()}{createGroup()}}
+{\footnotesize\ttfamily Group\+Ptr Controller\+::create\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Create a \doxylink{class_group}{Group} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the group \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Group\+Ptr (shared\+\_\+ptr$<$\+Group$>$) 
+\end{DoxyReturn}
+\Hypertarget{class_controller_a79bcf4439ea496d2ed36d3bdc7dfa379}\label{class_controller_a79bcf4439ea496d2ed36d3bdc7dfa379} 
+\index{Controller@{Controller}!createImage@{createImage}}
+\index{createImage@{createImage}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{createImage()}{createImage()}}
+{\footnotesize\ttfamily Multimedia\+Ptr Controller\+::create\+Image (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{path }\end{DoxyParamCaption})}
+
+
+
+Create a \doxylink{class_image}{Image} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em name} & name of the image \\
+\hline
+{\em path} & path of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Multimedia\+Ptr (shared\+\_\+ptr$<$\+Multimedia$>$) 
+\end{DoxyReturn}
+\Hypertarget{class_controller_a5d472f384403787b1ad34a4d4d7d859b}\label{class_controller_a5d472f384403787b1ad34a4d4d7d859b} 
+\index{Controller@{Controller}!createVideo@{createVideo}}
+\index{createVideo@{createVideo}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{createVideo()}{createVideo()}}
+{\footnotesize\ttfamily Multimedia\+Ptr Controller\+::create\+Video (\begin{DoxyParamCaption}\item[{int}]{duration,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{path }\end{DoxyParamCaption})}
+
+
+
+Create a \doxylink{class_video}{Video} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & duration of the video \\
+\hline
+{\em name} & name of the video \\
+\hline
+{\em path} & path of the video \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Multimedia\+Ptr (shared\+\_\+ptr$<$\+Multimedia$>$) 
+\end{DoxyReturn}
+\Hypertarget{class_controller_a006f65cdb008b0928e1350994b26a6bd}\label{class_controller_a006f65cdb008b0928e1350994b26a6bd} 
+\index{Controller@{Controller}!deleteGroup@{deleteGroup}}
+\index{deleteGroup@{deleteGroup}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{deleteGroup()}{deleteGroup()}}
+{\footnotesize\ttfamily int Controller\+::delete\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Delete the group object with name "{}name"{} from the group map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the group \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1\+: \doxylink{class_group}{Group} not found -\/ 0\+: Success 
+\end{DoxyReturn}
+\Hypertarget{class_controller_afc03ee71ab2c3f905cc34bfa86587598}\label{class_controller_afc03ee71ab2c3f905cc34bfa86587598} 
+\index{Controller@{Controller}!deleteMultimedia@{deleteMultimedia}}
+\index{deleteMultimedia@{deleteMultimedia}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{deleteMultimedia()}{deleteMultimedia()}}
+{\footnotesize\ttfamily int Controller\+::delete\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Delete the multimedia object with name "{}name"{} from the multimedia map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the multimedia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1\+: \doxylink{class_multimedia}{Multimedia} not found -\/ 0\+: Success 
+\end{DoxyReturn}
+\Hypertarget{class_controller_ac56e61463674f205d2a7325428c3664f}\label{class_controller_ac56e61463674f205d2a7325428c3664f} 
+\index{Controller@{Controller}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily void Controller\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Deserialize the controller from the input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & stream from which it is deserializing the controller \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_controller_a85a0ae8128b8ff07abcd7b0eaeca0024}\label{class_controller_a85a0ae8128b8ff07abcd7b0eaeca0024} 
+\index{Controller@{Controller}!deserializeMultimedia@{deserializeMultimedia}}
+\index{deserializeMultimedia@{deserializeMultimedia}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{deserializeMultimedia()}{deserializeMultimedia()}}
+{\footnotesize\ttfamily void Controller\+::deserialize\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Deserialize the multimedia map from the input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & stream from which it is deserializing the multimedia map \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_controller_a3bb22e28c10e3b94a515a791fc18f920}\label{class_controller_a3bb22e28c10e3b94a515a791fc18f920} 
+\index{Controller@{Controller}!getGroup@{getGroup}}
+\index{getGroup@{getGroup}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{getGroup()}{getGroup()}}
+{\footnotesize\ttfamily Group\+Ptr Controller\+::get\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Get the \doxylink{class_group}{Group} object with the name "{}name"{} from the group map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the group \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Group\+Ptr (shared\+\_\+ptr$<$\+Group$>$) 
+\end{DoxyReturn}
+\Hypertarget{class_controller_a8c076fdbd65e9f601687b3ad3a6beb89}\label{class_controller_a8c076fdbd65e9f601687b3ad3a6beb89} 
+\index{Controller@{Controller}!getMultimedia@{getMultimedia}}
+\index{getMultimedia@{getMultimedia}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{getMultimedia()}{getMultimedia()}}
+{\footnotesize\ttfamily Multimedia\+Ptr Controller\+::get\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Get the \doxylink{class_multimedia}{Multimedia} object with the name "{}name"{} from the multimedia map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the multimedia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Multimedia\+Ptr (shared\+\_\+ptr$<$\+Multimedia$>$) 
+\end{DoxyReturn}
+\Hypertarget{class_controller_a69a82a4d5e6e7e7e24119734776de703}\label{class_controller_a69a82a4d5e6e7e7e24119734776de703} 
+\index{Controller@{Controller}!playMultimedia@{playMultimedia}}
+\index{playMultimedia@{playMultimedia}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{playMultimedia()}{playMultimedia()}}
+{\footnotesize\ttfamily int Controller\+::play\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Print the multimedia object with the name "{}name"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the multimedia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 if the multimedia is found, -\/1 otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_controller_ac40afc1151af068c4c241610756a3dea}\label{class_controller_ac40afc1151af068c4c241610756a3dea} 
+\index{Controller@{Controller}!printAllGroup@{printAllGroup}}
+\index{printAllGroup@{printAllGroup}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{printAllGroup()}{printAllGroup()}}
+{\footnotesize\ttfamily void Controller\+::print\+All\+Group (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{char}]{line\+\_\+separator = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption}) const}
+
+
+
+Print all group objects in the map to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & stream to print the group \\
+\hline
+{\em line\+\_\+separator} & line separator \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_controller_a760072cbac9aef1019a958db280525a6}\label{class_controller_a760072cbac9aef1019a958db280525a6} 
+\index{Controller@{Controller}!printAllMultimedia@{printAllMultimedia}}
+\index{printAllMultimedia@{printAllMultimedia}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{printAllMultimedia()}{printAllMultimedia()}}
+{\footnotesize\ttfamily void Controller\+::print\+All\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{char}]{line\+\_\+separator = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption}) const}
+
+
+
+Print all multimedia objects in the map to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & stream to print the multimedia \\
+\hline
+{\em line\+\_\+separator} & line separator \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_controller_a291680e7abf83beb324225d2a8ee69ce}\label{class_controller_a291680e7abf83beb324225d2a8ee69ce} 
+\index{Controller@{Controller}!printGroup@{printGroup}}
+\index{printGroup@{printGroup}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{printGroup()}{printGroup()}}
+{\footnotesize\ttfamily void Controller\+::print\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::ostream \&}]{stream,  }\item[{char}]{line\+\_\+separator = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption}) const}
+
+
+
+Print the content of the group object with the name "{}name"{} to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the group \\
+\hline
+{\em stream} & stream to print the group \\
+\hline
+{\em line\+\_\+separator} & line separator \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_controller_aa1054b4255459ac212474678b61cd112}\label{class_controller_aa1054b4255459ac212474678b61cd112} 
+\index{Controller@{Controller}!printMultimedia@{printMultimedia}}
+\index{printMultimedia@{printMultimedia}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{printMultimedia()}{printMultimedia()}}
+{\footnotesize\ttfamily void Controller\+::print\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::ostream \&}]{stream,  }\item[{char}]{line\+\_\+separator = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption}) const}
+
+
+
+Print the multimedia object with the name "{}name"{} to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the multimedia \\
+\hline
+{\em stream} & stream to print the multimedia \\
+\hline
+{\em line\+\_\+separator} & line separator \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_controller_acf3add3e2a7b3ff589dec0d96f95eeb3}\label{class_controller_acf3add3e2a7b3ff589dec0d96f95eeb3} 
+\index{Controller@{Controller}!removeMultimediaFromGroup@{removeMultimediaFromGroup}}
+\index{removeMultimediaFromGroup@{removeMultimediaFromGroup}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{removeMultimediaFromGroup()}{removeMultimediaFromGroup()}}
+{\footnotesize\ttfamily int Controller\+::remove\+Multimedia\+From\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{group\+\_\+name,  }\item[{std\+::string}]{multimedia\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Remove a multimedia object from a group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & name of the group \\
+\hline
+{\em multimedia\+\_\+name} & name of the multimedia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1\+: \doxylink{class_group}{Group} not found -\/ 2\+: \doxylink{class_multimedia}{Multimedia} not found -\/ 3\+: \doxylink{class_multimedia}{Multimedia} already in the group -\/ 0\+: Success 
+\end{DoxyReturn}
+\Hypertarget{class_controller_a5903f82c44c77779a8e3a466f06812d3}\label{class_controller_a5903f82c44c77779a8e3a466f06812d3} 
+\index{Controller@{Controller}!serialize@{serialize}}
+\index{serialize@{serialize}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily void Controller\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const}
+
+
+
+Serialize the controller to the output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & stream to serialize the controller \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_controller_a0414ee43493f338857d7e317227a8b4b}\label{class_controller_a0414ee43493f338857d7e317227a8b4b} 
+\index{Controller@{Controller}!serializeMultimedia@{serializeMultimedia}}
+\index{serializeMultimedia@{serializeMultimedia}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{serializeMultimedia()}{serializeMultimedia()}}
+{\footnotesize\ttfamily void Controller\+::serialize\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const}
+
+
+
+Serialize the multimedia map to the output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & stream to serialize the multimedia map \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/controller/Controller.\+h\item 
+backend/controller/Controller.\+cpp\end{DoxyCompactItemize}
