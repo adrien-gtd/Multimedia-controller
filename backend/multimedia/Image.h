@@ -5,30 +5,31 @@
 
 class Controller;
 
+/**
+ * @brief Image class, represents  an image object
+ * 
+ */
 class Image : public Multimedia
 {
 protected:
+    /**
+     * @brief Width and height of the image
+     * 
+     */
     float width_{}, height_{};
+
+    /**
+     * @brief Construct a new Image object
+     * 
+     * @param width  width of the image
+     * @param height  height of the image
+     * @param name  name of the image
+     * @param path  path to the image file
+     */
     Image(float width, float height, std::string name, std::string path) : Multimedia(name, path), width_{width}, height_{height} {}
     Image() = default;
-    Image(std::istream& stream);
 
-    static std::shared_ptr<Image> makeSharedImage(float width, float height, std::string name, std::string path) { return std::shared_ptr<Image>(new Image(width, height, name, path)); }
-    static std::shared_ptr<Image> makeSharedImage(std::istream& stream) { return std::shared_ptr<Image>(new Image(stream)); }
-
-    friend class Controller;
-public:
-    ~Image() = default;
-
-    float getWidth() const { return width_; }
-    float getHeight() const { return height_; }
-    void setWidth(float width) { width_ = width; }
-    void setHeight(float height) { height_ = height; }
-
-    void render() override { system(("open " + path_ + " &").data()); }
-    void print(std::ostream &stream, char line_separator) const override;
-
-    void serialize(std::ostream & stream) const override;
-};
-
-#endif
+    /**
+     * @brief Deserialize an image object from an input stream
+     * 
+     * @param stream  inp

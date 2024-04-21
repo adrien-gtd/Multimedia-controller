@@ -65,10 +65,4 @@ public class MultimediaListPanel extends JPanel {
     }
 
     public void setGroup(GroupPanel group) {
-        this.group = group;
-    }
-
-    public JList<String> getJList() {
-        return jList;
-    }
-}
+        th

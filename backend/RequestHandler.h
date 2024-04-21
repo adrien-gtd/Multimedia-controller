@@ -4,6 +4,10 @@
 #include <string>
 #include "controller/Controller.h"
 
+/**
+ * @brief RequestHandler class, utility class to handle the request and return the response after processing the request see the communication_protocol_template for more details
+ * 
+ */
 class RequestHandler {
 private:
     std::string static fetchMultimedia(std::string body, Controller& my_controller);
@@ -22,6 +26,15 @@ private:
     std::string static addImage(std::string body, Controller& my_controller);
     std::string static addFilm(std::string body, Controller& my_controller);
 public:
+
+    /**
+     * @brief Handle the request and return the response after processing the request see the communication_protocol_template for more details
+     * 
+     * @param header  header of the request
+     * @param body  body of the request
+     * @param my_controller  controller object
+     * @return std::string 
+     */
     std::string static handleRequest(std::string header, std::string body, Controller& my_controller);
 };
 

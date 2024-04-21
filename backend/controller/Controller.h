@@ -16,42 +16,52 @@ class Group;
 using MultimediaPtr = std::shared_ptr<Multimedia>;
 using GroupPtr = std::shared_ptr<Group>;
 
+/**
+ * @brief Controller class, manages the multimedia objects and the group objects
+ * 
+ */
 class Controller
 {
 private:
+    /**
+     * @brief Map of multimedia objects storing the name of the multimedia object as the key and the multimedia object as the value
+     * 
+     */
     std::map<std::string, MultimediaPtr> multimedia_map_{};
+
+    /**
+     * @brief Map of group objects storing the name of the group object as the key and the group object as the value
+     * 
+     */
     std::map<std::string, GroupPtr> group_map_{};
 
 public:
     Controller() = default;
     ~Controller() = default;
 
+    /**
+     * @brief Create a Film object
+     * 
+     * @param duration  duration of the film
+     * @param name  name of the film
+     * @param path  path of the film
+     * @param chatpter_duration  array of chapter duration
+     * @param nb_chapters  number of chapters
+     * @return MultimediaPtr (shared_ptr<Multimedia>) 
+     */
     MultimediaPtr createFilm(int duration, std::string name, std::string path, int chatpter_duration[], int nb_chapters);
+
+    /**
+     * @brief Create a Video object
+     * 
+     * @param duration  duration of the video
+     * @param name   name of the video
+     * @param path   path of the video
+     * @return MultimediaPtr (shared_ptr<Multimedia>)
+     */
     MultimediaPtr createVideo(int duration, std::string name, std::string path);
-    MultimediaPtr createImage(float width, float height, std::string name, std::string path);
 
-    MultimediaPtr getMultimedia(std::string name) const;
-
-    int playMultimedia(std::string name) const;
-    void printMultimedia(std::string name, std::ostream& stream, char line_separator = '\n') const;
-    
-    GroupPtr createGroup(std::string name);
-    int addMultimediaToGroup(std::string group_name, std::string multimedia_name);
-    int removeMultimediaFromGroup(std::string group_name, std::string multimedia_name);
-    GroupPtr getGroup(std::string name) const;
-    void printGroup(std::string name, std::ostream& stream, char line_separator) const;
-
-    void printAllMultimedia(std::ostream& stream, char line_separator = '\n') const;
-    void printAllGroup(std::ostream& stream, char line_separator = '\n') const;
-
-    void serializeMultimedia(std::ostream& stream) const;
-    void deserializeMultimedia(std::istream & stream);
-
-    void serialize(std::ostream& stream) const;
-    void deserialize(std::istream & stream);
-
-    int deleteMultimedia(std::string name);
-    int deleteGroup(std::string name);
-};
-
-#endif
+    /**
+     * @brief Create a Image object
+     * 
+     * @param width  width of the image
