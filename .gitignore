@@ -1,0 +1,9 @@
+*.o
+.DS_Store
+/asset
+.vscode
+Makefile-cliserv
+*.txt
+depend-executable
+executable
+*.class
