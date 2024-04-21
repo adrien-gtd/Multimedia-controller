@@ -5,8 +5,8 @@
 #include <list>
 #include <iostream>
 #include <memory>
-#include "Multimedia.h"
-#include "Controller.h"
+#include "../multimedia/Multimedia.h"
+#include "../controller/Controller.h"
 
 class Controller;
 

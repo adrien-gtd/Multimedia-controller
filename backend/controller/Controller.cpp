@@ -8,7 +8,7 @@ MultimediaPtr Controller::createFilm(int duration, std::string name, std::string
     auto fetch_multimedia = multimedia_map_.find(name);
     if (fetch_multimedia != multimedia_map_.end())
         throw std::runtime_error("Error, the multimedia already exists.");
-    MultimediaPtr new_film = std::make_shared<Film>(duration, name, path, chatpter_duration, nb_chapters);
+    MultimediaPtr new_film = Film::makeSharedFilm(duration, name, path, chatpter_duration, nb_chapters);
     multimedia_map_.insert(std::make_pair(name, new_film));
     return new_film;
 }
@@ -18,7 +18,7 @@ MultimediaPtr Controller::createVideo(int duration, std::string name, std::strin
     auto fetch_multimedia = multimedia_map_.find(name);
     if (fetch_multimedia != multimedia_map_.end())
         throw std::runtime_error("Error, the multimedia already exists.");
-    MultimediaPtr new_video = std::make_shared<Video>(duration, name, path);
+    MultimediaPtr new_video = Video::makeSharedVideo(duration, name, path);
     multimedia_map_.insert(std::make_pair(name, new_video));
     return new_video;
 }
@@ -28,7 +28,7 @@ MultimediaPtr Controller::createImage(float width, float height, std::string nam
     auto fetch_multimedia = multimedia_map_.find(name);
     if (fetch_multimedia != multimedia_map_.end())
         throw std::runtime_error("Error, the multimedia already exists.");
-    MultimediaPtr new_image = std::make_shared<Image>(width, height, name, path);
+    MultimediaPtr new_image = Image::makeSharedImage(width, height, name, path);
     multimedia_map_.insert(std::make_pair(name, new_image));
     return new_image;
 }
@@ -161,11 +161,11 @@ void Controller::deserializeMultimedia(std::istream &stream)
     {
         std::getline(stream, line);
         if (line == "Film")
-            new_multimedia = std::make_shared<Film>(stream);
+            new_multimedia = Film::makeSharedFilm(stream);
         else if (line == "Image")
-            new_multimedia = std::make_shared<Image>(stream);
+            new_multimedia = Image::makeSharedImage(stream);
         else if (line == "Video")
-            new_multimedia = std::make_shared<Video>(stream);
+            new_multimedia = Video::makeSharedVideo(stream);
         else
             throw std::runtime_error("Cannot deserialize the multimedia map, the input provided is in the wrong format.");
         multimedia_map_.insert(std::make_pair(new_multimedia->getName(), new_multimedia));

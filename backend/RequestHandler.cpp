@@ -227,4 +227,4 @@ std::string RequestHandler::addFilm(std::string body, Controller& my_controller)
     } catch (const std::out_of_range& e) {
         return "DurationOutOfRange";
     }
-}
+};

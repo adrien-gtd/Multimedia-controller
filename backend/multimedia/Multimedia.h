@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+class Controller;
+
 
 class Multimedia
 {
@@ -11,11 +13,15 @@ protected:
     std::string name_{};
     std::string path_{};
 
-public:
-    Multimedia() = default;
-    virtual ~Multimedia() { std::cout << "Multimedia " << name_ << " deleted" << std::endl; }
     Multimedia(std::string name, std::string path) : name_{name}, path_{path} {};
     Multimedia(std::istream & stream);
+    Multimedia() = default;
+
+    friend class Controller;
+public:
+    
+    virtual ~Multimedia() { std::cout << "Multimedia " << name_ << " deleted" << std::endl; }
+
 
     std::string getName() const { return name_; }
     std::string getPath() const { return path_; }

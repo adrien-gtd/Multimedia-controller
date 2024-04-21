@@ -14,13 +14,11 @@
 
 
 #include "RequestHandler.h"
-#include "tcpserver.h"
-#include "Controller.h"
+#include "server/tcpserver.h"
+#include "controller/Controller.h"
 
 const int PORT = 3331;
 
-
-std::string handleRequest(std::string header, std::string body, Controller& my_controller);
 std::pair<std::string, std::string> getMultimediaAndGroupName(const std::string& body);
 
 int main(int argc, const char *argv[])
@@ -99,9 +97,9 @@ int main(int argc, const char *argv[])
   // my_controller->printAllGroup(std::cout);
   // my_controller->printAllMultimedia(std::cout);
 
-  #endif
+#endif
 
-  #ifdef version_3
+#ifdef version_3
 
   Controller *my_controller = new Controller();
   auto group1 = my_controller->createGroup("Ma liste");
@@ -155,6 +153,47 @@ int main(int argc, const char *argv[])
     return 1;
   }
 
+#endif
+
+#ifdef version_4
+  Controller *my_controller = new Controller();
+  // cree le TCPServer
+  auto *server =
+      new TCPServer([&](std::string const &request, std::string &response)
+                    {
+
+    // the request sent by the client to the server
+    std::cout << "request: " << request << std::endl;
+
+    // processing the request
+    std::istringstream iss(request);
+
+    // extract the header
+    std::string header;
+    std::getline(iss, header, ' ');
+
+    // get the body of the request
+    std::ostringstream oss;
+    oss << iss.rdbuf();
+    std::string body = oss.str();
+
+    // handle the request in another function, see #handleRequest
+    response = RequestHandler::handleRequest(header, body,* my_controller);
+
+    // return false would close the connecytion with the client
+    return true; });
+
+  // lance la boucle infinie du serveur
+  std::cout << "Starting Server on port " << PORT << std::endl;
+
+  int status = server->run(PORT);
+
+  // en cas d'erreur
+  if (status < 0)
+  {
+    std::cerr << "Could not start Server on port " << PORT << std::endl;
+    return 1;
+  }
 #endif
   return 0;
 }

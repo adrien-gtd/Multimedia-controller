@@ -1,11 +1,11 @@
 #ifndef controller_
 #define controller_
 
-#include "Multimedia.h"
-#include "Group.h"
-#include "Film.h"
-#include "Video.h"
-#include "Image.h"
+#include "../multimedia/Multimedia.h"
+#include "../group/Group.h"
+#include "../multimedia/Film.h"
+#include "../multimedia/Video.h"
+#include "../multimedia/Image.h"
 #include <memory>
 #include <iostream>
 #include <map>
